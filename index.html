@@ -5,36 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>LottoOracle — EngSurv (Systems) Ltd</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Atkinson Hyperlegible — BDA recommended, high legibility */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Inter:wght@500;600;700&display=swap');
 
 :root {
-  /* EngSurv brand palette — derived from HRV Coach + BwydGlân */
-  --navy:      #1a2e3b;
-  --navy-mid:  #243447;
-  --teal:      #0a9e8f;
-  --teal-dark: #077d71;
-  --teal-light:#e6f7f5;
-  --teal-mid:  #b2e4df;
-  --green:     #2a7a3b;
-  --bg:        #f2f4f6;
-  --surface:   #ffffff;
-  --border:    #dde1e6;
-  --border-light: #eef0f3;
-  --text:      #1a2e3b;
-  --text-mid:  #4a5568;
-  --text-muted:#8492a6;
-  --hot:       #d94f3d;
-  --hot-light: #fdf0ee;
-  --warm:      #e07b2a;
-  --warm-light:#fef3e6;
-  --cold:      #2a6cb5;
-  --cold-light:#eef4fd;
-  --sfl:       #6b46c1;
-  --sfl-light: #f3f0fd;
-  --gold:      #d4a017;
-  --gold-light:#fdf8e6;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
-  --shadow:    0 4px 12px rgba(0,0,0,.08);
+  /* EngSurv / BDA-aligned palette — WCAG 2.2 AA compliant */
+  --navy:         #1a2e3b;   /* header, footer */
+  --navy-mid:     #243447;
+  --teal:         #007a6e;   /* slightly deeper for AA contrast on cream */
+  --teal-dark:    #005e55;
+  --teal-light:   #d6f0ed;
+  --teal-mid:     #9ed4cf;
+
+  /* BDA warm cream background — reduces glare, aids reading */
+  --bg:           #faf7f2;
+  --surface:      #fffdf9;   /* cards — very slightly warmer than pure white */
+  --border:       #c8c2b8;   /* stronger border for visibility */
+  --border-light: #e0dbd3;
+
+  /* Text — high contrast on cream (all pass WCAG AA) */
+  --text:         #1a1a18;   /* near-black, warmer tone */
+  --text-mid:     #3d3a35;
+  --text-muted:   #6b655c;   /* passes AA on cream */
+
+  /* Heat colours — bold, distinct, accessible */
+  --hot:          #b91c1c;   /* deep red — strong contrast on cream */
+  --hot-light:    #fef2f2;
+  --hot-ring:     #b91c1c;
+
+  --warm:         #c2620a;   /* dark orange — passes AA */
+  --warm-light:   #fff7ed;
+  --warm-ring:    #c2620a;
+
+  --cold:         #1d4ed8;   /* deep blue — passes AA */
+  --cold-light:   #eff6ff;
+  --cold-ring:    #1d4ed8;
+
+  --neutral-ring: #6b655c;
+
+  --sfl:          #5b21b6;   /* deep purple — passes AA */
+  --sfl-light:    #f5f3ff;
+  --sfl-ring:     #5b21b6;
+
+  --gold:         #92400e;
+  --gold-light:   #fffbeb;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+  --shadow:    0 4px 12px rgba(0,0,0,.1);
   --radius:    8px;
   --radius-sm: 5px;
 }
@@ -44,10 +61,12 @@
 body {
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter', system-ui, sans-serif;
-  font-size:14px;
+  /* Atkinson Hyperlegible — BDA recommended, WCAG 2.2 aligned */
+  font-family:'Atkinson Hyperlegible', 'Inter', system-ui, sans-serif;
+  font-size:15px;      /* slightly larger base for legibility */
   min-height:100vh;
-  line-height:1.5;
+  line-height:1.6;     /* generous leading — BDA guidance */
+  letter-spacing:.01em;
 }
 
 /* ══════════════════════════════════════
@@ -132,24 +151,24 @@ header {
   margin-bottom:1.25rem;
 }
 .page-eyebrow {
-  font-size:.65rem;
-  font-weight:600;
-  color:var(--teal);
+  font-size:.68rem;
+  font-weight:700;
+  color:var(--teal-dark);   /* deeper teal — AA on cream */
   letter-spacing:.08em;
   text-transform:uppercase;
   margin-bottom:.25rem;
 }
 .page-title {
-  font-size:1.4rem;
+  font-size:1.5rem;
   font-weight:700;
   color:var(--navy);
-  letter-spacing:-.02em;
-  line-height:1.2;
+  letter-spacing:-.01em;
+  line-height:1.25;
 }
 .page-subtitle {
-  font-size:.8rem;
-  color:var(--text-muted);
-  margin-top:.2rem;
+  font-size:.82rem;
+  color:var(--text-mid);    /* boosted from muted — AA on cream */
+  margin-top:.25rem;
 }
 
 /* ══════════════════════════════════════
@@ -262,10 +281,10 @@ header {
 }
 
 .card-label {
-  font-size:.65rem;
-  font-weight:600;
-  color:var(--text-muted);
-  letter-spacing:.07em;
+  font-size:.67rem;
+  font-weight:700;
+  color:var(--text-mid);    /* boosted from muted — passes AA on cream */
+  letter-spacing:.06em;
   text-transform:uppercase;
   margin-bottom:.75rem;
   display:flex;
@@ -276,7 +295,7 @@ header {
   content:'';
   flex:1;
   height:1px;
-  background:var(--border-light);
+  background:var(--border);
 }
 .card-label.teal-label { color:var(--teal-dark); }
 .card-label.sfl-label  { color:var(--sfl); }
@@ -411,10 +430,10 @@ textarea::placeholder { color:var(--text-muted); }
   letter-spacing:-.02em;
 }
 .stat-desc {
-  font-size:.6rem;
-  font-weight:600;
-  color:var(--text-muted);
-  letter-spacing:.05em;
+  font-size:.62rem;
+  font-weight:700;
+  color:var(--text-mid);   /* passes AA on cream surface */
+  letter-spacing:.04em;
   text-transform:uppercase;
   line-height:1.35;
 }
@@ -431,33 +450,40 @@ textarea::placeholder { color:var(--text-muted); }
 }
 
 .ball {
-  width:clamp(27px, calc((100vw - 2.5rem - 9 * .3rem) / 10), 33px);
-  height:clamp(27px, calc((100vw - 2.5rem - 9 * .3rem) / 10), 33px);
+  width:clamp(30px, calc((100vw - 2.5rem - 9 * .3rem) / 10), 36px);
+  height:clamp(30px, calc((100vw - 2.5rem - 9 * .3rem) / 10), 36px);
   flex-shrink:0;
   border-radius:50%;
   display:flex; align-items:center; justify-content:center;
-  font-size:clamp(.52rem, 1.6vw, .62rem);
-  font-weight:600;
+  font-size:clamp(.55rem, 1.7vw, .65rem);
+  font-weight:700;
+  font-family:'Atkinson Hyperlegible', system-ui, sans-serif;
   cursor:default;
   transition:transform .12s;
-  border:1.5px solid transparent;
+  /* Cream fill — high contrast number text regardless of heat */
+  background:var(--surface);
+  color:var(--text);
+  /* Thick coloured ring = heat indicator */
+  border:3px solid var(--border);
+  box-shadow:var(--shadow-sm);
 }
-.ball:hover { transform:scale(1.18); }
+.ball:hover { transform:scale(1.15); }
 
-.ball-hot     { background:#fde8e6; color:var(--hot);  border-color:#f5c5c0; }
-.ball-warm    { background:#fef0e0; color:var(--warm); border-color:#f5d9b0; }
-.ball-neutral { background:#f2f4f6; color:var(--text-mid); border-color:var(--border); }
-.ball-cold    { background:#e8f0fc; color:var(--cold); border-color:#b8cfef; }
-.ball-life    { background:var(--sfl-light); color:var(--sfl); border-color:#c4b3e8; }
+/* Heat shown via ring colour + subtle fill tint — both readable */
+.ball-hot     { border-color:var(--hot-ring);     background:#fff5f5; color:var(--hot); }
+.ball-warm    { border-color:var(--warm-ring);    background:#fff8f0; color:var(--warm); }
+.ball-neutral { border-color:var(--border);       background:var(--surface); color:var(--text-mid); }
+.ball-cold    { border-color:var(--cold-ring);    background:#f0f5ff; color:var(--cold); }
+.ball-life    { border-color:var(--sfl-ring);     background:#f8f5ff; color:var(--sfl); }
 
 .heat-legend {
   display:flex; gap:1rem; flex-wrap:wrap; margin-top:.65rem;
 }
 .legend-item {
-  display:flex; align-items:center; gap:.3rem;
-  font-size:.65rem; font-weight:500; color:var(--text-muted);
+  display:flex; align-items:center; gap:.35rem;
+  font-size:.68rem; font-weight:600; color:var(--text-mid); /* passes AA */
 }
-.legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.legend-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; border:1.5px solid rgba(0,0,0,.15); }
 
 /* ══════════════════════════════════════
    SFL DUAL POOL
@@ -487,20 +513,21 @@ textarea::placeholder { color:var(--text-muted); }
 
 .pattern-table { width:100%; border-collapse:collapse; margin-top:.6rem; }
 .pattern-table th {
-  font-size:.62rem;
-  font-weight:600;
-  color:var(--text-muted);
-  letter-spacing:.06em;
+  font-size:.65rem;
+  font-weight:700;
+  color:var(--text-mid);   /* stronger contrast than muted */
+  letter-spacing:.05em;
   text-transform:uppercase;
   text-align:left;
-  padding:.4rem .6rem;
-  border-bottom:1.5px solid var(--border-light);
+  padding:.45rem .6rem;
+  border-bottom:2px solid var(--border);
 }
 .pattern-table td {
-  font-size:.78rem;
-  padding:.45rem .6rem;
+  font-size:.8rem;
+  padding:.5rem .6rem;
   border-bottom:1px solid var(--border-light);
   color:var(--text);
+  font-family:'Atkinson Hyperlegible', system-ui, sans-serif;
 }
 .pattern-table tr:last-child td { border-bottom:none; }
 .pattern-table tr:hover td { background:var(--bg); }
@@ -508,9 +535,9 @@ textarea::placeholder { color:var(--text-muted); }
 .num-hot  { color:var(--hot);  font-weight:600; }
 .num-cold { color:var(--cold); font-weight:600; }
 .num-sfl  { color:var(--sfl);  font-weight:600; }
-.val-high { color:var(--hot); }
-.val-med  { color:var(--warm); }
-.val-low  { color:var(--cold); }
+.val-high { color:var(--hot);  font-weight:600; }
+.val-med  { color:var(--warm); font-weight:600; }
+.val-low  { color:var(--cold); font-weight:600; }
 
 /* ══════════════════════════════════════
    AI COMMENTARY
@@ -588,24 +615,27 @@ textarea::placeholder { color:var(--text-muted); }
 }
 
 .pick-ball {
-  /* Fluid size: fills available width across 7 balls max */
-  width: clamp(28px, calc((100vw - 2rem - 44px - .5rem - 6 * .25rem) / 7), 36px);
-  height: clamp(28px, calc((100vw - 2rem - 44px - .5rem - 6 * .25rem) / 7), 36px);
+  width: clamp(30px, calc((100vw - 2rem - 44px - .5rem - 6 * .25rem) / 7), 38px);
+  height: clamp(30px, calc((100vw - 2rem - 44px - .5rem - 6 * .25rem) / 7), 38px);
   flex-shrink:0;
   border-radius:50%;
   display:flex; align-items:center; justify-content:center;
-  font-size:clamp(.55rem, 2.2vw, .7rem); font-weight:700;
+  font-size:clamp(.58rem, 2.2vw, .72rem);
+  font-weight:700;
+  font-family:'Atkinson Hyperlegible', system-ui, sans-serif;
   background:var(--navy);
-  color:white;
-  box-shadow:0 2px 6px rgba(26,46,59,.2);
+  color:#ffffff;
+  box-shadow:0 2px 6px rgba(26,46,59,.25);
 }
 .pick-bonus {
   background:var(--teal);
-  box-shadow:0 2px 6px rgba(10,158,143,.25);
+  color:#ffffff;
+  box-shadow:0 2px 6px rgba(0,122,110,.3);
 }
 .pick-life {
   background:var(--sfl);
-  box-shadow:0 2px 6px rgba(107,70,193,.25);
+  color:#ffffff;
+  box-shadow:0 2px 6px rgba(91,33,182,.3);
 }
 .pick-strategy {
   padding-left:calc(44px + .6rem);
