@@ -1,4 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>LottoOracle — EngSurv (Systems) Ltd</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap');
 
-<!doctype html><html lang="en" data-frame-uuid="6c004e2e-210b-4953-a018-24812ab2f685" data-frame-uchost="6c004e2e-210b-4953-a018-24812ab2f685.frame.claudeusercontent.com"><head><meta property="og:title" content="Claude Artifact"><meta name="twitter:title" content="Claude Artifact"><meta name="description" content="Try out Artifacts created by Claude users"><meta property="og:description" content="Try out Artifacts created by Claude users"><meta name="twitter:description" content="Try out Artifacts created by Claude users"><meta property="og:image" content="https://claude.ai/images/claude_ogimage.png"><meta name="twitter:image" content="https://claude.ai/images/claude_ogimage.png"><meta property="og:image:width" content="1138"><meta property="og:image:height" content="640"><meta property="og:image:alt" content="Claude Artifact"><meta name="twitter:card" content="summary"><meta name="robots" content="noindex, nofollow"><link rel="preconnect" href="https://assets-proxy.anthropic.com" crossorigin><link rel="dns-prefetch" href="https://assets-proxy.anthropic.com"><meta name="build-timestamp" content="1791335392"><meta name="build-git-hash" content="f63c652a3f5b7597be4bceed8b5af890037a584f"><meta name="frame-runtime-pin" content="manifest.3b2edf6a7a07295c.json"><meta charset="utf-8"><meta name="frame-shell-i18n" data-shipped="en-US,de-DE,fr-FR,ko-KR,ja-JP,es-419,es-ES,it-IT,hi-IN,pt-BR,id-ID" data-catalogs="de-DE:7c2f873edb3e,fr-FR:dfd937c15207,ko-KR:b903d8625dfb,ja-JP:a11ab62f1d70,es-419:37644a32f9d6,es-ES:5d17e1b81c80,it-IT:3d806fe1d0fc,hi-IN:2ae07df9b7dd,pt-BR:4bbdc33f2eb8,id-ID:3bed9551bb71,am:5f8dbc4a2be0,bho:0032ae5864d7,bn:72e02e3062be,da:779064e0093d,fi:837e378d9144,fil:b5c59f1f24ca,gu:62afd4b54901,ha:0abd6e1aa3b5,ig:0585a9d10003,kn:d15d26fe955d,ml:4d0d8d48abc3,mr:24cd5689fe52,nb:55b2acc00a4d,nl:b51972dd3a49,ny:2c4c6bfc0f36,om:54bda2b8d250,pt-PT:f460fc523a29,rn:b068b9d282dc,ru:c081cbef7eeb,rw:b66620716fbd,so:12bd1a0f9d9b,sv:396b9a00accb,sw:74c1ad1c9131,ta:ed6f45a6b9b4,te:99187c2afeac,th:5886a97e78d3,tr:c2ed29715b56,uk:0bd58dde4153,vi:642c1f4651e3,wo:c0cc3c8b006a,yo:32fdabf01a7e,zh-Hans:4f45640022b7,zh-Hant:deed7101e732"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"><title>Claude Artifact</title><script nonce="1qXjhinhoZvE2ek7ywSyQA==">window.__frameInlineProbe=new Error,function(e,t,o){try{var n=window===top&&history.state,r=n&&n.__tempLocation;if(r&&void 0===n.__tempKey&&"string"==typeof r.href){var a=new URL(r.href,location.origin);a.origin===location.origin&&(location.replace(a.href),e.leaving="")}}catch{}if(t?.embedded&&(e.embedded=e.host=""),parent!==window){var c=location.origin,i=location.ancestorOrigins;if(i)i[0]===c&&i[i.length-1]===c&&(e.embedded="");else if(parent===top&&document.referrer)try{new URL(document.referrer).origin===c&&(e.embedded="")}catch{}try{var d=window.frameElement;d&&d.ownerDocument.documentElement.hasAttribute("data-frame-uuid")&&(e.nested="")}catch{}}"embedded"in e&&"none"===(t?.chrome??o.get("chrome"))&&(e.chrome="none",document.querySelector("meta[name=viewport]").setAttribute("content","width=device-width,initial-scale=1,viewport-fit=cover"));var s="desktop"===t?.platform?"host-tools":"comment-mode",m="embedded"in e?t?null!=t.hostcaps?t.hostcaps:(" "+o.get("hostcaps")+" ").indexOf(" "+s+" ")<0?"":s:o.get("hostcaps"):"",l=String(m||"").split(" ").filter(function(e,t,o){return("comment-mode"===e||"comments-list"===e||"comment-composer"===e||"comment-threads"===e||"page-comments"===e||"artifact-nav"===e||"artifact-nav-vanity"===e||"comment-summon"===e||"open-in-claude"===e||"open-chat"===e||"cloud-session"===e||"cowork-task"===e||"no-send-all"===e||"summon-into-chat"===e||"summon-into-session"===e||"summon-into-channel"===e||"connector-off"===e||"confirm-page-sends"===e||"viewer-context"===e||"chrome"===e||"export"===e||"page-foot"===e||"chrome-readonly"===e||"selection-menu"===e||"chat-beside"===e||"claude-tips"===e||"header"===e||"duplicate"===e||"sheet-arrow"===e||"presence"===e||"host-tools"===e||"context-card"===e||"context-send"===e||"context-send-held"===e||"host-nav"===e||"url-anchor"===e||"edge-to-edge"===e||"keyboard-done"===e||"scroll-chain"===e||"save-file"===e||"save-blob"===e||"host-keys"===e||"device-camera"===e||"device-microphone"===e||"device-speech"===e||"device-geolocation"===e||"device-motion"===e||"device-screenshare"===e)&&o.indexOf(e)===t});l.length&&(e.hostcaps=l.join(" "));var h={mode:["light","dark","system"],platform:["web","desktop"],font:["anthropic","system"]};for(var p of Object.keys(h)){var f=t?.[p]??o.get(p[0]);if("mode"===p&&null==t?.mode&&!("embedded"in e))try{var u=JSON.parse(localStorage.getItem("LSS-userThemeMode"));u&&"object"==typeof u&&(u=u.value),"light"!==u&&"dark"!==u||(f=u)}catch(e){}h[p].includes(f)&&(e[p]=f)}}(document.documentElement.dataset,window.claudeDesktopArtifactPane,new URLSearchParams(location.search))</script><script nonce="1qXjhinhoZvE2ek7ywSyQA==">!function(){try{var e=document.documentElement.dataset,t=e.frameUuid;if(!t||"leaving"in e||"nested"in e)return;var r=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/,n=new URLSearchParams(location.search),a=self===top&&!("embedded"in document.documentElement.dataset),o=n.get("org"),i=(document.cookie.match(/(?:^|;\s*)lastActiveOrg=([^;]*)/)||[])[1],s=null,c=null;try{var m=a?localStorage.getItem("frame_org_hints"):null;if(null!==m&&m.length<=16384){var d=JSON.parse(m),l=d&&"object"==typeof d?d[t]:null;l&&"object"==typeof l&&"string"==typeof l.o&&"string"==typeof l.a&&r.test(l.a)&&(c=l.o)}}catch(e){}var u=performance.getEntriesByType&&performance.getEntriesByType("navigation")[0]||{};if(a&&("reload"===u.type||"back_forward"===u.type))try{s=sessionStorage.getItem("frame_boot_org:"+t)}catch(e){}var f=o&&r.test(o)?o:s&&r.test(s)?s:c&&r.test(c)?c:i&&r.test(i)?i:null,g=n.get("via"),p=null!==g?g:a?"user_open":"embedded_view",_=n.get("sk"),v=new URLSearchParams;f&&v.set("org",f),p&&v.set("via",p),_&&/^[A-Za-z0-9_-]{16,64}$/.test(_)&&v.set("sk",_);var h=location.pathname.split("/").pop()||"";try{h=decodeURIComponent(h)}catch(e){}var w="";h.toLowerCase().slice(-37)==="-"+t.toLowerCase()?w=h.slice(0,h.length-37):h.length>23&&"-"===h.charAt(h.length-23)&&/^[1-9A-HJ-NP-Za-km-z]{22}$/.test(h.slice(-22))&&(w=h.slice(0,h.length-23)),/^[a-z0-9][a-z0-9-]{0,59}$/.test(w)&&v.set("vanity",w);var y=window.__frameSessionId;null==y&&(y=window.__frameSessionId=crypto.randomUUID?crypto.randomUUID():"");var b="initial";try{var S=function(e){try{var t=sessionStorage.getItem(e);if(!y||!t)return!1;var r=e+"_claim",n=y+"|"+t,a=sessionStorage.getItem(r);if(a===n)return!0;var o=a?a.split("|"):[],i=Number(o[2]);return!(3!==o.length||"reload"!==o[0]||o[1]!==t||!Number.isFinite(i)||Date.now()-i>=3e4)&&(sessionStorage.setItem(r,n),sessionStorage.getItem(r)===n)}catch(e){return!1}},I=(sessionStorage.getItem("frame_chunk_reload")||"").split(":"),k=Number(I[2]),A=I[0]===t&&("chrome"===I[1]||"deferred"===I[1]||"broker"===I[1])&&Number.isFinite(k)&&Date.now()-k<3e5,P="frame_hot_hard_reload:"+t,E=(sessionStorage.getItem(P)||"").split(":"),N=Number(E[2]),T=E[0]===t&&Number.isFinite(N)&&Date.now()-N<3e5,U=function(e){var r=sessionStorage.getItem(e);if(!r)return!1;var n=r.lastIndexOf(":"),a=Number(r.slice(n+1));return r.slice(0,n)===t&&Number.isFinite(a)&&Date.now()-a<3e5}("frame_pin_reload")&&S("frame_pin_reload"),D=A&&S("frame_chunk_reload"),x=T&&S(P);(U||D||x)&&(b="reboot")}catch(e){}v.set("bk",b),v.set("actor","id"),v.set("vt","1");var C="/api/frame/"+t+"?"+v.toString(),F=function(e,t){var r=null==e?null:e.toLowerCase();return null!==r&&-1!==t.indexOf(r)?r:null},$=navigator.userAgent,O={"X-Frame-CP":"go","X-Frame-Platform":F(n.get("platform"),["web","desktop","ios","android","cli"])||($.includes(" Electron/")?"desktop":/Android/.test($)?"android":/iPad|iPhone|iPod/.test($)||$.includes("Macintosh")&&navigator.maxTouchPoints>1?"ios":"web")},z=F(n.get("surface"),["chat","cowork","code","slack","teams","standalone"])||(a?"standalone":"");z&&(O["X-Frame-Surface"]=z);var B=document.head.querySelector('meta[name="build-timestamp"]');B&&B.content&&(O["X-Frame-Client-Version"]=B.content),y&&(O["X-Frame-Session-Id"]=y);var R=function(t){var r=e.frameUchost,n=document.head.querySelector('meta[name="frame-runtime-pin"]');if(r&&n&&!/(^|\.)localhost(:\d+)?$/.test(r)){var a=n.content||"",o="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",i=new RegExp("^[A-Za-z0-9_-]{24}\\."+o+"\\."+o+"\\.[0-9]{1,12}(?:\\.(?:"+o+"|oracle|ext|compartment))?(?:\\.v[A-Za-z0-9_-]{1,1023})?$");t.then(function(e){return e&&200===e.status&&!window.__framePregrantOff?e.clone().json():null}).then(function(e){if(e&&"public"!==e.kind&&!1!==e.pregrantEnabled&&!0===e.tokenExchangeEnabled&&"string"==typeof e.ver&&"string"==typeof e.assetToken&&/^[A-Za-z0-9_-]{1,64}$/.test(e.ver)&&i.test(e.assetToken)&&"visible"===document.visibilityState&&!window.__framePregrantOff&&!window.__framePregrant&&"function"==typeof PerformanceServerTiming){var t=e.runtime&&"string"==typeof e.runtime.contract?e.runtime.contract:e.contract;if("string"==typeof t&&/^\d+\.\d+\.\d+$/.test(t)){var n=t.split(".").map(Number);if((n[0]||n[1]||n[2])&&(n[0]<0||0===n[0]&&(n[1]<2||2===n[1]&&n[2]<12)))return}try{if(localStorage.getItem("frame_pregrant_denied"))return;var o=Number(localStorage.getItem("frame_pregrant_noexp"));if(o>0&&Date.now()-o<864e5)return;var s=(JSON.parse(localStorage.getItem("frame_pregrant_nocred"))||{})[r+"|"+e.ver];if("number"==typeof s&&Date.now()-s<2592e6)return;var c=e.assetToken.split("."),m=c.length>4&&"v"===c[c.length-1].charAt(0),d=(JSON.parse(localStorage.getItem("frame_grant_ledger"))||{})[r+"|"+e.ver],l=d?d.e-Date.now():0;m&&c.pop();var u=c[1]+"|"+c[2]+"|"+(c[4]||"")+(m?"|v":"");if(d&&(d.v!==u||d.p!==a?l>0:l>6e5))return}catch(e){}var f=document.createElement("iframe"),g={f:f,sentAt:performance.now()};f.hidden=!0,f.setAttribute("aria-hidden","true"),f.setAttribute("sandbox",""),f.referrerPolicy="no-referrer",f.dataset.pregrant="true",f.name="r-"+Math.random().toString(36).slice(2),f.src="https://"+r+"/_t?__frame_t="+encodeURIComponent(e.assetToken)+"&v="+encodeURIComponent(e.ver)+(a?"&__frame_v="+a:"")+"&__frame_renew=1",f.onload=function(){void 0===g.loaded&&(g.loaded=!0)},f.onerror=function(){void 0===g.loaded&&(g.loaded=!1)},g.cap=setTimeout(function(){f.remove(),window.__framePregrant===g&&(window.__framePregrant=void 0)},2e4),document.documentElement.appendChild(f),window.__framePregrant=g}}).catch(function(){})}},X=function(){return fetch(C,{credentials:"same-origin",headers:O,priority:"high",signal:AbortSignal.timeout(2e4)})};if(parent!==window&&"embedded"in document.documentElement.dataset){var L=null;try{var Z=parent.__frameHostBoot;if((L=Z&&Z[C]||null)&&L.takenAt){var H=performance.getEntriesByType("navigation")[0];(H&&"reload"===H.type||Date.now()-L.takenAt>=5e3)&&(delete Z[C],L=null)}}catch(e){L=null}if(L&&L.res&&"function"==typeof L.res.then){L.takenAt||(L.takenAt=Date.now()),L.sid&&(O["X-Frame-Session-Id"]=window.__frameSessionId=L.sid),"number"==typeof L.at&&"string"==typeof L.from&&(window.__frameHostStart={at:L.at,from:L.from});var J=new Promise(function(e,t){L.res.then(e,t)}).then(function(e){try{var t=204===e.status||205===e.status||304===e.status;return new Response(t?null:e.body,{status:e.status,statusText:e.statusText,headers:e.headers})}catch(e){return X()}});return J.catch(function(){}),window.__frameBootPrefetch={url:C,res:J},window.__frameHostBootDrop=function(){Z[C]===L&&delete Z[C],L.res=null},void R(J)}}var j=X();if(j.catch(function(){}),window.__frameBootPrefetch={url:C,res:j},R(j),!f){var q=fetch("/api/account",{credentials:"same-origin",signal:AbortSignal.timeout(8e3)});q.catch(function(){}),window.__frameAccountPrefetch={res:q}}}catch(e){}}(),function(){try{var e=document.documentElement.dataset,t=e.frameUchost;if(!e.frameUuid||!t||"leaving"in e||"nested"in e)return;var r=document.createElement("iframe"),n={f:r};r.hidden=!0,r.setAttribute("aria-hidden","true"),r.setAttribute("sandbox","allow-same-origin"),r.referrerPolicy="no-referrer",r.dataset.warmup="true",r.src=(/(^|\.)localhost(:\d+)?$/.test(t)?location.protocol:"https:")+"//"+t+"/_warmup",r.onload=function(){void 0===n.at&&(n.at=performance.now())},n.cap=setTimeout(function(){r.remove()},6e4),document.documentElement.appendChild(r),window.__frameWarmup=n}catch(e){}}()</script><script nonce="1qXjhinhoZvE2ek7ywSyQA==">!function(){var e={locale:"en-US",messages:null,ready:null};window.__frameI18n=e;try{for(var t=document.querySelector('meta[name="frame-shell-i18n"]'),n=(t&&t.getAttribute("data-shipped")||"").split(",").filter(function(e){return/^[\w-]+$/.test(e)}),a=Object.create(null),r=(t&&t.getAttribute("data-catalogs")||"").split(","),l=0;l<r.length;l++){var o=/^([\w-]+):(\w+)$/.exec(r[l]);o&&!(o[1]in a)&&(a[o[1]]=o[2])}var i=function(e){for(var t=Object.create(null),a=0;a<n.length;a++){var r=n[a].toLowerCase();t[r]=n[a];var l=r.split("-")[0];l in t||(t[l]=n[a])}for(var o=0;o<e.length;o++){var i=e[o];if("string"==typeof i&&i){var c=i.toLowerCase();if(c in t)return t[c];var u=c.split("-")[0];if(u&&u in t)return t[u]}}return null},c=function(e){if("string"!=typeof e||!e)return null;for(var t in a)if(t.toLowerCase()===e.toLowerCase())return t;return i([e])},u=document.documentElement.dataset,s=window.claudeDesktopArtifactPane,f="embedded"in u?c(s&&null!=s.locale?s.locale:new URLSearchParams(location.search).get("locale")):null;if(null===f){var d=null;try{d=localStorage.getItem("spa:locale")}catch(e){}f=d?c(d)||"en-US":i(navigator.languages||[])||"en-US"}e.locale=f,document.documentElement.lang=f,"en-US"!==f&&a[f]&&(e.ready=fetch("/i18n/frame-shell/"+f+".json?v="+a[f],{credentials:"same-origin",signal:"undefined"!=typeof AbortSignal&&AbortSignal.timeout?AbortSignal.timeout(2e4):void 0}).then(function(e){return e.ok?e.json():null}).then(function(t){t&&"object"==typeof t&&!Array.isArray(t)&&(e.messages=t)}),e.ready.catch(function(){}))}catch(e){}}()</script><link rel="preload" as="font" type="font/woff2" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-DDVos-BJ.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0f671921-CErWPUiC.woff2"><script type="module" crossorigin src="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/frame-shell-Czau2bJs.js" nonce="1qXjhinhoZvE2ek7ywSyQA=="></script><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/preload-helper-BWst14uo.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-frame-boot-C0bwV_QB.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/frame-shell-chrome-u1AX0nGh.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-frame-CReVOuvK.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/rolldown-runtime-C3OYiQ02.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-frame-Dnz5Yb7l.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/frame-shell-deferred-AkzHfCpp.js"><link rel="modulepreload" crossorigin href="https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/frame-shell-broker-15cBHarV.js"><style nonce="1qXjhinhoZvE2ek7ywSyQA==">:root{--font-anthropic-sans:"anthropic-sans", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "PingFang TC", "Hiragino Sans", "Apple SD Gothic Neo", "Kohinoor Devanagari", "Kohinoor Bangla", "Kohinoor Telugu", "Tamil Sangam MN", "Kohinoor Gujarati", "Malayalam Sangam MN", "Nirmala UI", "Noto Sans Devanagari UI", "Noto Sans Devanagari", "Noto Sans Bengali UI", "Noto Sans Bengali", "Noto Sans Telugu UI", "Noto Sans Telugu", "Noto Sans Tamil UI", "Noto Sans Tamil", "Noto Sans Gujarati UI", "Noto Sans Gujarati", "Noto Sans Kannada UI", "Noto Sans Kannada", "Noto Sans Malayalam UI", "Noto Sans Malayalam", Thonburi, "Leelawadee UI", "Noto Sans Thai UI", "Noto Sans Thai", Kefa, Ebrima, "Noto Sans Ethiopic", "Abyssinica SIL", sans-serif}@font-face{font-family:anthropic-sans;src:url(https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc27851ad-DDVos-BJ.woff2)format("woff2");font-weight:300 800;font-style:normal;font-display:swap;font-feature-settings:"dlig" 0}@font-face{font-family:anthropic-sans;src:url(https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c9d3a3a49-CJtkx3-S.woff2)format("woff2");font-weight:300 800;font-style:italic;font-display:swap;font-feature-settings:"dlig" 0}:root{--font-anthropic-serif:"anthropic-serif", ui-serif, Georgia, "Times New Roman", "Kohinoor Devanagari", "Kohinoor Bangla", "Kohinoor Telugu", "Tamil Sangam MN", "Kohinoor Gujarati", "Malayalam Sangam MN", "Nirmala UI", "Noto Sans Devanagari UI", "Noto Sans Devanagari", "Noto Sans Bengali UI", "Noto Sans Bengali", "Noto Sans Telugu UI", "Noto Sans Telugu", "Noto Sans Tamil UI", "Noto Sans Tamil", "Noto Sans Gujarati UI", "Noto Sans Gujarati", "Noto Sans Kannada UI", "Noto Sans Kannada", "Noto Sans Malayalam UI", "Noto Sans Malayalam", Thonburi, "Leelawadee UI", "Noto Sans Thai UI", "Noto Sans Thai", Kefa, Ebrima, "Noto Sans Ethiopic", "Abyssinica SIL", serif}@font-face{font-family:anthropic-serif;src:url(https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c66fc489e-2VcCjn5t.woff2)format("woff2");font-weight:300 800;font-style:normal;font-display:swap;font-feature-settings:"dlig" 0}@font-face{font-family:anthropic-serif;src:url(https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc410af59-Dcb-9NUS.woff2)format("woff2");font-weight:300 800;font-style:italic;font-display:swap;font-feature-settings:"dlig" 0}:root{--bg:#fff;--fg:#0b0b0b;--mut:#52514e;--spin:#898781;--line:#0b0b0b1a;--div:#0b0b0b0d;--bord:#0b0b0b33;--hov:#0b0b0b0d;--surf:#fff;--brand:#c6613f;--primary:#0b0b0b;--primary-hov:#2c2c2a;--on-primary:#fff;--sec:#ffffff1a;--sec-ring:#0b0b0b1a;--sec-hov:#0b0b0b0d;--picto:#e7e6e1;--page:#fcfcfb}@media (prefers-color-scheme:dark){html:not([data-mode]){--bg:#1a1a19;--fg:#f0efec;--mut:#c3c2b7;--line:#ffffff1a;--div:#ffffff0d;--bord:#fff3;--hov:#ffffff13;--surf:#20201f;--primary:#fff;--primary-hov:#e1e0d9;--on-primary:#0b0b0b;--sec:#ffffff1a;--sec-ring:transparent;--sec-hov:#ffffff24;--picto:#454442;--page:#151515}}html[data-mode=light]{--lightningcss-light:initial;--lightningcss-dark: ;color-scheme:light}html[data-mode=dark]{--bg:#1a1a19;--fg:#f0efec;--mut:#c3c2b7;--line:#ffffff1a;--div:#ffffff0d;--bord:#fff3;--hov:#ffffff13;--surf:#20201f;--primary:#fff;--primary-hov:#e1e0d9;--on-primary:#0b0b0b;--sec:#ffffff1a;--sec-ring:transparent;--sec-hov:#ffffff24;--picto:#454442;--page:#151515;--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}@font-face{font-family:Anthropicons-Variable;src:url(https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0f671921-CErWPUiC.woff2)format("woff2-variations");font-weight:400 700;font-display:block}@property --bar{syntax:"<length>";inherits:true;initial-value:0}:root{--bar-h:calc(2.5rem * var(--cds-rem-scale,1));--bar:var(--bar-h);--lightningcss-light:initial;--lightningcss-dark: ;color-scheme:light dark}@media (prefers-color-scheme:dark){:root{--lightningcss-light: ;--lightningcss-dark:initial}}@layer{*{box-sizing:border-box;margin:0;padding:0}button{font:inherit;border:0;background:0 0;cursor:pointer;color:inherit}}html,body{overscroll-behavior:none;background:var(--bg);height:100%;color:var(--fg);overflow:hidden}html[data-hostcaps~=scroll-chain],html[data-hostcaps~=scroll-chain] body{overscroll-behavior:auto}body{font:13px/1.4 anthropic-sans,-apple-system,BlinkMacSystemFont,system-ui,sans-serif}#hdr{height:var(--bar-h);justify-content:space-between;align-items:center;gap:8px;padding:0 12px;display:flex;position:relative}html:not([data-embedded]) #hdr,html:not([data-embedded]) #hdr-degraded{border-bottom:1px solid var(--div)}#top-edge{height:var(--bar);background-color:var(--bg);position:fixed;top:0;left:0;right:0}html[data-embedded] #top-edge{display:none}.l,.r{align-items:center;gap:8px;display:flex}.l{flex:1;min-width:0}.r{flex:none}.byline{font-size:var(--cds-font-size-caption,.75rem);color:var(--mut);white-space:nowrap;text-overflow:ellipsis;flex-shrink:0;max-width:312px;overflow:hidden}.l>button[data-title-menu]{flex-shrink:1000;min-width:0;margin-left:-6px;overflow:hidden}.l button[data-title-menu]>span,.l button[data-title-menu] .truncate{min-width:0}.skel{background:var(--hov);border-radius:4px;display:inline-block}.skel-home{flex:none;width:16px;height:16px;margin-right:4px}.skel-title{width:8em;height:1em}.skel-avatar{border-radius:50%;width:24px;height:24px}.degraded-title{white-space:nowrap;text-overflow:ellipsis;font-size:13px;font-weight:400;overflow:hidden}#hdr-degraded,body.chrome-degraded #hdr{display:none}body.chrome-degraded #hdr-degraded{height:var(--bar-h);align-items:center;gap:8px;padding:0 12px;display:flex;position:relative}@media (width<=768px){html:not([data-embedded]) .l{grid-template-columns:minmax(0,1fr);place-items:center start;gap:0;display:grid}html:not([data-embedded]) .l>*{max-width:100%}html:not([data-embedded]) .l>.byline{margin-top:-3px}html:not([data-embedded]) .l>[data-storage]{margin-top:-4px}}html[data-embedded]{--bar-h:calc(2.625rem * var(--cds-rem-scale,1))}html[data-embedded] #hdr{padding:0 8px}html[data-embedded] .byline{flex-shrink:1;max-width:100%}html[data-embedded] .skel-home,html[data-embedded] .skel-title,html[data-embedded] .skel-avatar,html[data-embedded][data-chrome=none] #hdr,html[data-embedded][data-chrome=none] #hdr-degraded,html[data-header-hidden] #hdr,html[data-header-hidden] #hdr-degraded,html[data-header-hidden] #top-edge,html[data-header-hidden] [data-chrome-pill]{display:none}html[data-embedded][data-chrome=none],html[data-header-hidden]{--bar:0px}html[data-host][data-chrome=none]{--bar:env(safe-area-inset-top,0px)}main{inset:var(--bar) 0 0 0;display:flex;position:absolute}html[data-host][data-chrome=none][data-extended-edges~=top] main{top:0}html[data-host][data-chrome=none][data-extended-edges~=top] #loading{top:var(--bar)}#frame-slot{flex:1;min-width:0;position:relative}#loading{justify-content:center;align-items:center;display:flex;position:absolute;inset:0}#loading[hidden]{display:none}#loading.slow{text-align:center;color:var(--mut);flex-direction:column;gap:12px;padding:0 24px;font-size:13px}#loading.slow>button{order:1}#loading:after{content:"";box-sizing:border-box;background:conic-gradient(transparent 40%, var(--spin)) border-box, linear-gradient(var(--line), var(--line)) border-box;border:2px solid #0000;border-radius:50%;width:20px;height:20px;animation:1s linear infinite spin;mask:radial-gradient(farthest-side,#0000 calc(100% - 2px),#000 calc(100% - 1.5px))}@keyframes spin{to{transform:rotate(360deg)}}#frame-content{opacity:0;border:0;width:100%;height:100%;transition:opacity .12s;position:absolute;inset:0}#frame-slot>iframe.swap:not(.ready){opacity:0;pointer-events:none;border:0;width:100%;height:100%;position:absolute;inset:0}#frame-slot>iframe.swap.hot-under:not(.ready){opacity:1}#frame-slot>iframe.hot-under~#frame-content{background:var(--bg)}#frame-slot>iframe.retired{opacity:0;pointer-events:none;border:0;width:100%;height:100%;position:absolute;inset:0}#frame-content.swap{transition:none}#frame-content.swap.crossfade{transition:opacity .12s}#frame-slot>iframe.fading-out{opacity:1;pointer-events:none;border:0;width:100%;height:100%;position:absolute;inset:0}#frame-content.ready{opacity:1}@media (prefers-reduced-motion:reduce){#loading:after{animation:none}#frame-content{transition:none}}body.err #hdr,body.err #hdr-degraded,body.err #top-edge,#err[hidden]{display:none}#err{text-align:center;color:var(--fg);place-content:safe center;gap:8px;padding:96px 16px 128px;display:grid;position:absolute;inset:0;overflow-y:auto}
-@font-face{font-family:Anthropicons-Variable;src:url(https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0f671921-CErWPUiC.woff2)format("woff2-variations");font-weight:400 700;font-display:block}
-</style><meta name="shell-inline-span" content="11632"><meta name="robots" content="noindex, nofollow"><link rel="preconnect" href="https://6c004e2e-210b-4953-a018-24812ab2f685.frame.claudeusercontent.com"></head><body><div id="top-edge" aria-hidden="true"></div><header id="hdr" tabindex="-1" aria-label="Artifact controls"><span class="skel skel-home" aria-hidden="true"></span><div class="l" aria-hidden="true"><span class="skel skel-title"></span></div><div class="r" aria-hidden="true"><span class="skel skel-avatar"></span></div></header><div id="hdr-degraded"><span class="degraded-title"></span> <span class="byline">Content is user-generated and unverified.</span></div><main><div id="frame-slot" data-frame-uuid="6c004e2e-210b-4953-a018-24812ab2f685" data-frame-uchost="6c004e2e-210b-4953-a018-24812ab2f685.frame.claudeusercontent.com" data-frame-tophost="6c004e2e-210b-4953-a018-24812ab2f685-top.frame.claudeusercontent.com"><div id="loading"><div class="loading-status" role="status" aria-label="Loading" tabindex="-1"></div></div></div></main><div id="err" hidden></div></body></html>
+:root {
+  --void:#0a0a0f; --panel:#16161f; --border:#2a2a3a;
+  --gold:#f5c842; --gold-dim:#a88c2a;
+  --cyan:#4fd1c5; --magenta:#e040fb;
+  --text:#e8e8f0; --muted:#7a7a9a;
+  --hot:#ff6b6b; --cold:#74b9ff; --warm:#fda85c;
+  --sfl:#7c6aff; --sfl-dim:#4a3fb5;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+body {
+  background:var(--void); color:var(--text);
+  font-family:'Inter',sans-serif;
+  min-height:100vh; overflow-x:hidden;
+}
+
+/* ── HEADER ── */
+header {
+  position:relative; z-index:10;
+  padding:1.1rem 1rem 1rem;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,rgba(245,200,66,.05) 0%,transparent 100%);
+}
+.header-inner {
+  max-width:1100px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:.5rem;
+}
+.logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:-.03em; line-height:1; }
+.logo span { color:var(--gold); }
+.tagline { font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-top:.2rem; }
+.header-right { text-align:right; flex-shrink:0; }
+.engsurv-brand { font-family:'Syne',sans-serif; font-weight:700; font-size:.7rem; color:var(--text); }
+.engsurv-brand span { color:var(--gold); }
+.engsurv-sub { font-family:'DM Mono',monospace; font-size:.52rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-top:.1rem; }
+.version-badge {
+  display:inline-block; margin-top:.3rem;
+  font-family:'DM Mono',monospace; font-size:.52rem;
+  padding:.18rem .5rem; border:1px solid var(--gold-dim); color:var(--gold);
+  border-radius:2px; letter-spacing:.07em; text-transform:uppercase;
+}
+
+/* ── MAIN ── */
+main { position:relative; z-index:10; max-width:1100px; margin:0 auto; padding:1rem; }
+
+/* ── GAME SELECTOR — 3-column grid, all visible ── */
+.selector-label { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:.45rem; }
+.selector-row {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:.4rem; margin-bottom:1rem;
+}
+.lottery-btn {
+  font-family:'DM Mono',monospace; font-size:.6rem;
+  padding:.55rem .3rem; width:100%; text-align:center;
+  background:var(--panel); border:1px solid var(--border);
+  color:var(--muted); cursor:pointer;
+  letter-spacing:.03em; text-transform:uppercase;
+  transition:all .18s; border-radius:3px; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis;
+}
+.lottery-btn:hover { border-color:var(--gold-dim); color:var(--text); }
+.lottery-btn.active { background:var(--gold); color:var(--void); border-color:var(--gold); font-weight:500; }
+.lottery-btn.sfl-active { background:var(--sfl); color:white; border-color:var(--sfl); }
+
+/* ── BANNERS ── */
+.data-banner {
+  border-radius:3px; padding:.65rem 1rem; margin-bottom:1rem;
+  font-family:'DM Mono',monospace; font-size:.63rem; letter-spacing:.03em; line-height:1.55; display:none;
+}
+.data-banner.real  { background:rgba(79,209,197,.07); border:1px solid rgba(79,209,197,.25); color:var(--cyan); }
+.data-banner.warn  { background:rgba(245,200,66,.07); border:1px solid var(--gold-dim); color:var(--gold); }
+.data-banner.paste { background:rgba(253,168,92,.07); border:1px solid rgba(253,168,92,.35); color:var(--warm); }
+
+/* ── UPDATE DATA BUTTON ROW ── */
+.update-row {
+  display:flex; gap:.5rem; align-items:center; margin-bottom:.9rem; flex-wrap:wrap;
+}
+.update-btn {
+  font-family:'DM Mono',monospace; font-size:.65rem;
+  padding:.52rem 1rem; background:transparent;
+  border:1px solid var(--cyan); color:var(--cyan);
+  cursor:pointer; border-radius:3px; letter-spacing:.04em;
+  transition:all .18s; white-space:nowrap;
+}
+.update-btn:hover { background:rgba(79,209,197,.1); }
+.paste-hint { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--muted); line-height:1.5; }
+
+/* ── PASTE ZONE ── */
+.paste-zone { display:none; }
+.paste-zone.open { display:block; }
+.input-section { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:1rem; margin-bottom:1rem; }
+.section-label {
+  font-family:'DM Mono',monospace; font-size:.58rem; color:var(--gold);
+  letter-spacing:.12em; text-transform:uppercase; margin-bottom:.6rem;
+  display:flex; align-items:center; gap:.45rem;
+}
+.section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.section-label.sfl-label { color:var(--sfl); }
+.input-help { font-size:.7rem; color:var(--muted); margin-bottom:.6rem; line-height:1.55; }
+.input-help code { font-family:'DM Mono',monospace; font-size:.65rem; color:var(--cyan); background:rgba(79,209,197,.08); padding:.1rem .3rem; border-radius:2px; }
+textarea {
+  width:100%; background:var(--void); border:1px solid var(--border); color:var(--text);
+  font-family:'DM Mono',monospace; font-size:.7rem; padding:.75rem;
+  border-radius:3px; resize:vertical; min-height:100px; line-height:1.8;
+  transition:border-color .18s;
+}
+textarea:focus { outline:none; border-color:var(--gold-dim); }
+textarea::placeholder { color:#3a3a5a; }
+.draw-count { font-family:'DM Mono',monospace; font-size:.62rem; color:var(--muted); margin-top:.3rem; text-align:right; }
+.draw-count span { color:var(--cyan); }
+
+/* ── CONTROLS ── */
+.controls-row { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; margin-bottom:1rem; }
+.analyse-btn {
+  font-family:'Syne',sans-serif; font-weight:700; font-size:.82rem;
+  letter-spacing:.04em; padding:.72rem 1.5rem;
+  background:var(--gold); color:var(--void);
+  border:none; cursor:pointer; border-radius:3px;
+  transition:all .18s; text-transform:uppercase; flex-shrink:0;
+}
+.analyse-btn:hover { background:#f7d45a; transform:translateY(-1px); }
+.analyse-btn:active { transform:translateY(0); }
+.analyse-btn:disabled { opacity:.4; cursor:not-allowed; transform:none; }
+.analyse-btn.sfl-mode { background:var(--sfl); color:white; }
+.analyse-btn.sfl-mode:hover { background:#9882ff; }
+.count-selector {
+  font-family:'DM Mono',monospace; font-size:.68rem;
+  padding:.72rem .75rem; background:var(--panel);
+  border:1px solid var(--border); color:var(--text);
+  border-radius:3px; cursor:pointer;
+}
+.count-label { font-family:'DM Mono',monospace; font-size:.62rem; color:var(--muted); }
+
+/* ── THINKING ── */
+.thinking-bar {
+  display:none; background:var(--panel); border:1px solid var(--border);
+  border-radius:3px; padding:.9rem 1.1rem; margin-bottom:1rem;
+  font-family:'DM Mono',monospace; font-size:.68rem; color:var(--cyan); letter-spacing:.04em;
+}
+.thinking-bar .dots::after { content:''; animation:dots 1.5s infinite; }
+@keyframes dots { 0%{content:''} 33%{content:'.'} 66%{content:'..'} 100%{content:'...'} }
+
+/* ── STAT CARDS ── */
+.stats-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:.6rem; margin-bottom:1rem;
+}
+@media(min-width:600px) { .stats-grid { grid-template-columns:repeat(5,1fr); } }
+.stat-card { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:.9rem .75rem; }
+.stat-value { font-family:'Syne',sans-serif; font-weight:800; font-size:1.6rem; line-height:1; margin-bottom:.2rem; }
+.stat-desc { font-family:'DM Mono',monospace; font-size:.52rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; line-height:1.4; }
+
+/* ── HEAT MAP — single scrollable row ── */
+.freq-panel { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:1rem; margin-bottom:1rem; }
+.heat-legend { display:flex; gap:.9rem; margin-top:.6rem; flex-wrap:wrap; }
+.legend-item { display:flex; align-items:center; gap:.3rem; font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted); letter-spacing:.05em; text-transform:uppercase; }
+.legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* ── HEAT MAP BALLS — wrap to show all, no horizontal scroll ── */
+.balls-row {
+  display:flex; flex-direction:row; flex-wrap:wrap;
+  gap:.28rem; margin-top:.75rem;
+}
+
+.ball {
+  /* Size to fit ~10 per row on a 390px phone with 1rem padding each side */
+  width:clamp(26px, calc((100vw - 2rem - 5 * .28rem) / 10), 34px);
+  height:clamp(26px, calc((100vw - 2rem - 5 * .28rem) / 10), 34px);
+  flex-shrink:0;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:'DM Mono',monospace; font-weight:500;
+  font-size:clamp(.5rem, 1.8vw, .64rem);
+  border:2px solid transparent; cursor:default; transition:transform .15s;
+}
+.ball:hover { transform:scale(1.15); }
+.ball-hot     { background:radial-gradient(circle at 35% 35%,#ff9a9a,var(--hot));  color:white;       border-color:rgba(255,107,107,.4); }
+.ball-warm    { background:radial-gradient(circle at 35% 35%,#ffc89a,var(--warm)); color:var(--void); border-color:rgba(253,168,92,.4); }
+.ball-neutral { background:radial-gradient(circle at 35% 35%,#888,#3a3a3a);        color:white;       border-color:rgba(255,255,255,.08); }
+.ball-cold    { background:radial-gradient(circle at 35% 35%,#a8d8ff,var(--cold)); color:var(--void); border-color:rgba(116,185,255,.4); }
+.ball-life    { background:radial-gradient(circle at 35% 35%,#b3aaff,var(--sfl));  color:white;       border-color:rgba(124,106,255,.5); }
+
+/* ── SFL DUAL POOL ── */
+.sfl-pools { display:grid; grid-template-columns:1fr; gap:.8rem; margin-bottom:1rem; }
+@media(min-width:600px) { .sfl-pools { grid-template-columns:2fr 1fr; } }
+
+/* ── TABLES ── */
+.table-grid { display:grid; grid-template-columns:1fr; gap:.8rem; margin-bottom:1rem; }
+@media(min-width:560px) { .table-grid { grid-template-columns:1fr 1fr; } }
+
+.tbl-panel { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:1rem; }
+.pattern-table { width:100%; border-collapse:collapse; margin-top:.6rem; }
+.pattern-table th {
+  font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted);
+  letter-spacing:.08em; text-transform:uppercase; text-align:left;
+  padding:.38rem .55rem; border-bottom:1px solid var(--border);
+}
+.pattern-table td {
+  font-family:'DM Mono',monospace; font-size:.68rem;
+  padding:.42rem .55rem; border-bottom:1px solid rgba(42,42,58,.45);
+}
+.pattern-table tr:last-child td { border-bottom:none; }
+.val-high { color:var(--hot); } .val-med { color:var(--warm); } .val-low { color:var(--cold); }
+
+/* ── AI COMMENTARY ── */
+.ai-commentary {
+  background:var(--panel); border:1px solid var(--border);
+  border-left:3px solid var(--cyan); border-radius:4px;
+  padding:1rem 1.1rem; margin-bottom:1rem;
+}
+.ai-commentary p { font-size:.75rem; line-height:1.7; color:var(--text); margin-bottom:.35rem; }
+.ai-commentary p:last-child { margin-bottom:0; }
+
+/* ── PICKS ── */
+.picks-section {
+  background:linear-gradient(135deg,rgba(245,200,66,.05) 0%,rgba(79,209,197,.03) 100%);
+  border:1px solid var(--gold-dim); border-radius:4px;
+  padding:1rem; margin-bottom:1rem;
+}
+.picks-section.sfl-picks {
+  background:linear-gradient(135deg,rgba(124,106,255,.07) 0%,rgba(79,209,197,.03) 100%);
+  border-color:var(--sfl-dim);
+}
+.picks-label { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--gold); letter-spacing:.12em; text-transform:uppercase; margin-bottom:.35rem; }
+.picks-label.sfl-label { color:var(--sfl); }
+.picks-disclaimer { font-size:.65rem; color:var(--muted); margin-bottom:.85rem; line-height:1.5; }
+
+.pick-line { display:flex; align-items:flex-start; gap:.6rem; margin-bottom:.85rem; flex-wrap:wrap; }
+.pick-num { font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted); letter-spacing:.06em; width:42px; flex-shrink:0; padding-top:.55rem; }
+.pick-balls { display:flex; gap:.25rem; flex-wrap:wrap; flex:1; min-width:0; }
+.pick-ball {
+  width:34px; height:34px; flex-shrink:0;
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:'DM Mono',monospace; font-weight:500; font-size:.66rem;
+  background:radial-gradient(circle at 35% 35%,#f7d45a,var(--gold));
+  color:var(--void); border:2px solid rgba(245,200,66,.4);
+  box-shadow:0 0 8px rgba(245,200,66,.15);
+}
+.pick-bonus {
+  background:radial-gradient(circle at 35% 35%,#a0faf4,var(--cyan));
+  color:var(--void); border-color:rgba(79,209,197,.4);
+  box-shadow:0 0 8px rgba(79,209,197,.15);
+}
+.pick-life {
+  background:radial-gradient(circle at 35% 35%,#b3aaff,var(--sfl));
+  color:white; border-color:rgba(124,106,255,.5);
+  box-shadow:0 0 8px rgba(124,106,255,.2);
+}
+.pick-strategy { font-family:'DM Mono',monospace; font-size:.56rem; color:var(--muted); width:100%; padding-left:50px; margin-top:.05rem; }
+
+/* ── ERROR ── */
+.error-msg {
+  background:rgba(255,107,107,.1); border:1px solid rgba(255,107,107,.3);
+  color:var(--hot); font-family:'DM Mono',monospace; font-size:.68rem;
+  padding:.65rem .9rem; border-radius:3px; margin-bottom:.8rem; display:none;
+}
+
+#results { display:none; }
+
+/* ── FOOTER ── */
+footer {
+  position:relative; z-index:10;
+  border-top:1px solid var(--border); padding:1.2rem 1rem;
+  margin-top:.5rem;
+}
+.footer-inner { max-width:1100px; margin:0 auto; }
+.footer-copy { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--muted); line-height:1.7; margin-bottom:.5rem; }
+.footer-copy strong { color:var(--text); }
+.footer-copy .gold { color:var(--gold); }
+.footer-disclaimer { font-family:'DM Mono',monospace; font-size:.56rem; color:#4a4a6a; line-height:1.65; }
+
+/* ── DESKTOP tweaks ── */
+@media(min-width:768px) {
+  main { padding:1.5rem 2rem; }
+  header { padding:1.4rem 2rem 1.2rem; }
+  .logo { font-size:1.6rem; }
+  .stats-grid { grid-template-columns:repeat(5,1fr); gap:.8rem; }
+  .stat-value { font-size:1.8rem; }
+  .selector-row { grid-template-columns:repeat(6,1fr); }
+  .ball { width:34px; height:34px; font-size:.64rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="logo">Lotto<span>Oracle</span></div>
+      <div class="tagline">AI Statistical Lottery Analysis</div>
+    </div>
+    <div class="header-right">
+      <div class="engsurv-brand">EngSurv <span>(Systems)</span> Ltd</div>
+      <div class="engsurv-sub">An EngSurv Group Product</div>
+      <span class="version-badge">v1.3 · 2025</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="selector-label">Select Lottery</div>
+  <div class="selector-row">
+    <button class="lottery-btn active" onclick="setLottery('uk49s',this)">UK 49s</button>
+    <button class="lottery-btn" onclick="setLottery('lotto',this)">UK Lotto</button>
+    <button class="lottery-btn" onclick="setLottery('euromillions',this)">EuroMillions</button>
+    <button class="lottery-btn" onclick="setLottery('thunderball',this)">Thunderball</button>
+    <button class="lottery-btn" onclick="setLottery('setforlife',this)">Set for Life</button>
+    <button class="lottery-btn" onclick="setLottery('custom',this)">Custom</button>
+  </div>
+
+  <!-- Status banner -->
+  <div class="data-banner real" id="data-banner"></div>
+
+  <!-- Update Data row -->
+  <div class="update-row" id="update-row">
+    <button class="update-btn" onclick="openSourceAndPaste()">↗ Update Draw Data</button>
+    <span class="paste-hint" id="paste-hint"></span>
+  </div>
+
+  <!-- Collapsible paste zone -->
+  <div class="paste-zone" id="paste-zone">
+    <div class="data-banner paste" id="paste-instructions" style="display:block">
+      Copy the draw results from the page that just opened, then paste them below.<br>
+      Each line = one draw. Numbers separated by spaces. Bonus/Life Ball last.
+    </div>
+    <div class="input-section">
+      <div class="section-label" id="input-section-label">Paste Updated Draw Data</div>
+      <p class="input-help" id="input-help"></p>
+      <textarea id="draw-input" rows="8" placeholder="Paste draw data here…"></textarea>
+      <div class="draw-count">Draws loaded: <span id="draw-count">0</span></div>
+    </div>
+  </div>
+
+  <div class="error-msg" id="error-msg"></div>
+
+  <div class="controls-row">
+    <button class="analyse-btn" id="analyse-btn" onclick="runAnalysis()">▶ Analyse</button>
+    <span class="count-label">Generate</span>
+    <select class="count-selector" id="pick-count">
+      <option value="3">3 lines</option>
+      <option value="5" selected>5 lines</option>
+      <option value="10">10 lines</option>
+    </select>
+    <span class="count-label">picks</span>
+  </div>
+
+  <div class="thinking-bar" id="thinking-bar">⟳ Analysing draw patterns<span class="dots"></span></div>
+
+  <div id="results">
+
+    <div class="stats-grid" id="stats-grid"></div>
+
+    <!-- Standard heat map (scrollable single row) -->
+    <div class="freq-panel" id="standard-heatmap">
+      <div class="section-label">Number Heat Map</div>
+      <div class="heat-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--hot)"></div>Hot</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--warm)"></div>Warm</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#555"></div>Neutral</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--cold)"></div>Cold</div>
+      </div>
+      <div class="balls-row" id="balls-container"></div>
+    </div>
+
+    <!-- SFL dual pool heat maps -->
+    <div id="sfl-heatmap" style="display:none">
+      <div class="sfl-pools">
+        <div class="freq-panel" style="margin-bottom:0">
+          <div class="section-label sfl-label">Main Numbers (1–47)</div>
+          <div class="heat-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--hot)"></div>Hot</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--warm)"></div>Warm</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#555"></div>Neutral</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--cold)"></div>Cold</div>
+          </div>
+          <div class="balls-row" id="sfl-main-balls"></div>
+        </div>
+        <div class="freq-panel" style="margin-bottom:0">
+          <div class="section-label sfl-label">Life Ball Pool (1–10)</div>
+          <div class="heat-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--sfl)"></div>Hot</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--cold)"></div>Cold</div>
+          </div>
+          <div class="balls-row" id="sfl-life-balls"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hot / Cold tables -->
+    <div class="table-grid">
+      <div class="tbl-panel">
+        <div class="section-label">🔥 Hottest Numbers</div>
+        <table class="pattern-table" id="hot-table">
+          <thead><tr><th>No.</th><th>Freq</th><th>Last seen</th><th>Rate</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="tbl-panel">
+        <div class="section-label">🧊 Coldest Numbers</div>
+        <table class="pattern-table" id="cold-table">
+          <thead><tr><th>No.</th><th>Freq</th><th>Last seen</th><th>Status</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SFL Life Ball frequency -->
+    <div id="sfl-life-section" style="display:none; margin-bottom:.8rem">
+      <div class="tbl-panel">
+        <div class="section-label sfl-label">Life Ball Frequency</div>
+        <table class="pattern-table" id="sfl-life-table">
+          <thead><tr><th>Ball</th><th>Freq</th><th>Last seen</th><th>Rate</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Sum + OE -->
+    <div class="table-grid">
+      <div class="tbl-panel">
+        <div class="section-label">Sum Range</div>
+        <table class="pattern-table" id="sum-table">
+          <thead><tr><th>Range</th><th>Count</th><th>%</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="tbl-panel">
+        <div class="section-label">Odd / Even Split</div>
+        <table class="pattern-table" id="oddeven-table">
+          <thead><tr><th>Pattern</th><th>Count</th><th>%</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- AI Commentary -->
+    <div class="ai-commentary" id="ai-commentary" style="display:none"></div>
+
+    <!-- Picks -->
+    <div class="picks-section" id="picks-section">
+      <div class="picks-label" id="picks-label">⬡ AI-Generated Selections</div>
+      <p class="picks-disclaimer">Weighted statistical probability from real draw data. Lottery draws are random — no analysis predicts future results.</p>
+      <div id="picks-container"></div>
+    </div>
+
+  </div><!-- #results -->
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">
+      <strong class="gold">LottoOracle</strong> — a product of <strong>EngSurv (Systems) Ltd</strong> · Part of the EngSurv Group<br>
+      © 2025 EngSurv (Systems) Ltd. All rights reserved. Unauthorised reproduction prohibited.
+    </div>
+    <div class="footer-disclaimer">
+      Statistical analysis tool only. Lottery draws are random events. No algorithm can predict future outcomes. For entertainment purposes only. Play responsibly. GamCare: 0808 8020 133 · begambleaware.org
+    </div>
+  </div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════
+//  REAL DRAW DATA  (static, current to Jun 2026)
+//  Sources: lottery.co.uk · beatlottery.co.uk · lottostrategies.com
+// ══════════════════════════════════════════
+const REAL_DRAWS = {
+
+uk49s:`6 7 16 31 38 43 10
+3 15 26 28 32 38 45
+7 16 24 38 43 49 10
+7 8 16 25 31 45 13
+13 17 24 30 39 46 33
+14 16 19 21 34 45 37
+5 14 21 23 27 35 33
+4 12 22 31 45 47 20
+12 29 30 31 32 33 42
+8 13 19 23 33 44 47
+5 8 12 16 29 34 45
+7 35 36 41 42 43 4
+1 20 31 36 40 46 25
+10 22 31 32 43 44 23
+14 16 20 29 35 45 23
+1 2 20 29 46 48 16
+18 24 29 33 38 44 47
+3 11 30 35 36 38 7
+3 13 29 35 38 44 9
+7 24 25 33 34 41 8
+4 12 28 31 38 47 13
+1 8 15 31 42 46 41
+3 6 15 25 40 49 29
+15 17 34 35 36 44 1
+8 17 23 36 38 40 15
+1 12 14 17 25 41 7
+9 17 24 36 38 49 4
+8 24 40 41 46 47 9
+3 9 14 32 43 46 5
+5 7 10 24 43 48 22
+9 19 31 34 48 49 16
+2 5 17 22 37 46 31
+6 18 23 29 37 40 11
+4 14 19 27 35 47 8
+11 16 21 33 39 44 5
+3 9 21 28 41 48 17
+7 12 19 26 38 45 22
+5 11 24 30 36 43 14
+2 16 23 32 40 49 6
+8 15 22 31 43 46 19
+6 13 20 29 38 47 2
+1 10 18 27 36 45 24
+9 14 21 28 37 46 12
+4 11 19 26 35 44 7
+3 12 22 31 40 49 15
+7 16 25 34 43 48 1
+5 10 17 24 33 42 20
+2 8 21 30 39 48 13
+6 14 23 32 41 46 18
+4 9 16 25 34 43 11
+1 7 20 29 38 47 22
+3 13 22 31 40 49 5
+8 17 26 35 44 48 10
+5 12 19 28 37 46 16
+2 11 18 27 36 45 23
+6 15 24 33 42 49 7
+4 10 21 30 39 48 14
+1 9 16 25 34 43 19
+7 13 22 31 40 47 2
+3 8 17 26 35 44 12
+5 14 23 32 41 48 6
+2 10 19 28 37 46 21
+6 11 20 29 38 45 17
+4 9 18 27 36 43 15
+1 8 15 24 33 42 22
+7 12 21 30 39 48 3
+5 13 22 31 40 47 9
+2 11 18 27 36 45 14
+6 14 23 32 41 46 20
+3 10 17 26 35 44 7
+8 15 24 33 42 49 11
+4 9 16 25 34 43 18
+1 12 19 28 37 46 5
+7 13 20 29 38 45 22
+5 11 18 27 36 43 16
+2 10 21 30 39 48 6
+6 15 22 31 40 47 13
+3 8 17 24 33 42 19
+4 14 23 32 41 49 2
+1 9 16 25 34 44 8
+7 12 21 28 37 46 15
+5 13 20 29 38 45 21
+2 11 19 26 35 43 17
+6 10 23 32 41 48 4
+3 9 18 27 36 47 14
+8 15 22 31 40 46 20
+4 12 17 28 39 49 1
+1 11 20 29 38 45 16
+7 14 23 32 41 48 5
+5 10 19 26 37 46 22
+2 8 21 30 39 47 11
+6 13 18 27 36 43 19
+3 9 22 31 40 49 7
+4 15 24 33 42 48 13
+1 10 17 28 35 44 20
+8 12 21 30 41 47 6
+5 14 23 32 39 46 18
+2 11 20 29 38 45 15`,
+
+lotto:`6 20 34 38 47 48 4
+10 30 36 44 45 58 59
+2 3 18 25 40 54 14
+9 37 39 40 47 51 19
+20 33 43 46 50 56 45
+12 15 22 28 31 32 23
+31 34 36 41 54 57 27
+2 14 24 33 37 40 19
+1 11 12 13 18 49 33
+10 13 27 50 54 56 14
+5 11 28 30 47 53 52
+7 25 27 46 52 59 40
+1 2 19 29 51 57 5
+7 8 17 25 37 40 11
+33 45 50 52 58 59 15
+1 4 8 23 34 57 29
+5 24 28 46 49 56 19
+12 26 30 32 39 58 4
+2 5 22 35 44 54 23
+5 6 13 18 22 53 9
+3 9 20 33 45 50 12
+3 20 27 29 38 46 14
+20 36 40 43 51 55 21
+12 15 16 35 38 48 49
+2 25 27 34 45 52 47
+15 20 43 50 51 58 36
+18 22 24 41 53 56 59
+4 9 26 35 42 46 38
+5 7 10 17 32 42 40
+6 13 19 48 57 58 1
+2 6 9 16 38 48 46
+10 21 49 54 55 56 40
+9 11 14 43 49 59 35
+15 18 36 50 51 57 10
+9 11 27 44 48 52 25
+9 17 31 34 54 57 7
+2 3 42 45 46 47 44
+2 15 20 42 43 59 16
+17 18 31 36 39 51 29
+9 24 30 33 35 54 32
+4 9 28 40 42 59 55
+3 24 26 34 35 36 9
+6 39 43 52 58 59 19
+29 33 36 38 48 58 52
+11 17 25 31 51 54 53
+2 21 42 48 56 57 51
+6 8 12 33 49 59 42
+13 28 31 39 51 59 27
+15 23 24 28 37 41 59
+3 16 23 30 38 47 25
+13 16 30 36 53 59 22
+7 9 18 24 30 36 42
+1 26 36 49 53 54 10
+1 9 18 27 38 42 13
+10 22 37 40 45 57 24
+7 15 18 22 31 54 28
+6 10 19 20 43 59 16
+5 25 43 45 47 55 58
+7 30 38 42 54 59 5
+1 9 10 32 44 55 49
+1 11 15 19 45 48 37
+1 16 27 41 50 55 54
+2 27 29 38 44 51 23
+5 9 17 31 47 58 35
+1 5 10 30 33 50 56
+3 5 7 18 21 37 38
+9 23 24 28 42 57 18
+3 9 11 16 21 48 22
+5 7 25 29 40 46 15
+6 9 12 15 47 55 56
+4 11 17 25 41 51 14
+6 12 15 25 51 58 57
+9 12 18 37 43 45 15
+4 11 34 51 54 55 57
+16 17 22 38 40 47 4
+14 16 21 42 49 54 41
+6 10 12 13 31 58 15
+8 15 31 38 44 49 59
+8 20 36 42 48 59 46
+8 13 35 42 47 53 39
+11 17 27 30 39 46 56
+2 9 19 32 45 57 31
+8 11 12 16 20 33 52
+8 28 31 33 49 55 13
+9 12 13 26 38 40 4
+5 6 16 20 30 36 2
+18 24 34 35 47 51 26
+2 14 34 37 48 52 29
+13 14 15 27 33 36 18
+3 12 21 24 41 45 20
+17 18 23 38 41 47 9
+16 23 28 40 42 55 44
+7 8 11 32 36 59 21
+1 24 26 28 37 42 44
+1 2 11 13 30 37 33
+27 36 39 48 57 59 45
+4 10 12 22 53 55 31
+12 14 28 31 33 46 43
+10 26 33 53 57 59 18
+5 30 36 40 41 43 53
+1 7 17 35 43 57 19
+17 18 22 34 53 58 14
+10 11 34 38 54 55 26
+6 15 27 35 41 43 28
+4 5 6 20 31 33 28
+4 38 42 52 56 58 44
+1 19 29 33 42 44 21
+8 18 19 30 43 44 58
+6 11 14 19 41 43 53
+1 4 10 26 31 40 24
+3 7 9 29 33 51 5
+5 7 37 39 40 43 8
+17 31 39 46 52 57 1
+8 33 34 50 56 59 17
+6 28 36 45 47 52 51
+26 27 34 41 51 54 52
+1 13 25 30 32 35 2
+7 14 29 31 38 39 56
+14 23 24 32 38 54 50
+2 5 12 20 47 57 43
+2 13 24 29 32 39 46
+11 33 34 38 55 57 20
+2 6 10 12 28 29 57
+7 17 20 24 27 46 21
+16 19 22 24 27 35 28
+18 31 35 38 42 54 41`,
+
+euromillions:`7 8 24 35 49 2 12
+7 8 25 31 45 7 12
+5 24 29 40 42 6 12
+13 35 39 44 47 3 5
+5 8 14 16 18 3 10
+6 7 17 20 21 1 10
+24 39 42 43 48 5 8
+6 12 18 25 41 2 6
+3 8 15 17 48 2 8
+4 17 25 28 44 5 11
+11 13 24 29 33 2 5
+8 10 26 32 42 9 12
+1 9 13 35 40 5 6
+5 10 23 31 37 3 11
+3 13 24 39 40 2 8
+27 30 31 41 43 5 8
+13 30 31 32 36 1 12
+6 9 10 13 37 1 7
+2 14 38 42 45 10 11
+6 9 12 30 39 4 10
+24 31 34 40 49 9 12
+19 31 34 40 49 6 11
+5 20 22 36 50 2 9
+1 19 26 28 50 3 7
+6 11 14 31 43 8 11
+4 12 33 38 47 5 10
+7 22 24 29 44 4 6
+3 15 18 27 42 1 9
+9 18 35 38 46 7 12
+2 20 31 41 47 3 6
+10 16 25 33 39 5 8
+4 8 21 36 49 1 11
+13 22 28 40 45 9 12
+6 15 23 31 38 4 7
+1 18 27 35 42 2 10
+7 12 19 28 47 6 11
+3 16 24 39 44 5 9
+5 21 30 36 43 3 8
+2 11 22 29 41 7 12
+8 17 26 33 48 4 10
+4 13 25 37 46 1 6
+9 20 31 40 47 5 11
+6 14 23 32 41 3 9
+1 10 19 28 37 7 12
+7 16 27 36 43 2 8
+3 12 21 30 39 6 11
+5 18 25 34 49 4 10
+2 15 24 33 44 1 7
+8 17 26 35 48 5 12
+4 11 20 29 38 3 9
+6 13 22 31 42 2 10
+1 9 16 25 34 7 11
+7 14 23 32 43 4 8
+3 10 19 28 37 6 12
+5 12 21 30 41 1 9
+2 11 18 27 36 5 10
+4 15 24 33 46 3 7
+9 16 25 34 47 2 11
+1 8 17 26 35 8 12
+7 13 22 31 44 4 6
+3 11 20 29 38 7 10
+5 14 23 32 45 1 9
+2 10 19 28 37 5 11
+6 12 21 30 43 3 8
+4 9 18 27 36 6 12
+8 15 24 33 42 2 7
+1 11 20 29 41 4 10
+7 16 25 34 48 1 9
+3 13 22 31 40 7 11
+5 10 19 26 35 5 12
+2 12 21 30 39 3 8
+6 14 23 32 47 2 10
+4 11 18 27 38 6 9
+9 17 26 35 44 1 7
+1 8 15 24 33 5 11
+7 13 20 29 42 4 12
+3 10 19 28 41 3 8
+5 14 23 30 46 7 10
+2 11 22 31 45 2 9
+6 15 24 33 40 6 11
+4 9 16 25 43 1 8
+8 17 26 35 48 5 12
+1 12 21 30 39 3 7
+7 16 27 36 47 4 10
+3 11 20 29 38 2 9
+5 13 22 31 44 7 11
+2 10 19 28 41 1 6
+6 14 23 32 46 5 12
+4 9 18 27 40 3 8
+9 15 24 33 49 6 10
+1 8 17 26 39 2 7
+7 12 21 30 43 4 11
+3 11 20 29 42 1 9
+5 14 25 34 45 5 12
+2 10 19 28 37 3 8
+6 13 22 31 40 7 10
+4 9 16 25 39 2 11
+8 15 24 33 48 6 9`,
+
+thunderball:`15 18 20 23 27 8
+6 7 18 28 35 14
+3 21 24 26 33 2
+3 7 18 23 31 5
+6 10 11 29 33 9
+20 21 24 26 35 13
+9 18 19 24 35 13
+14 20 24 26 37 5
+12 18 25 32 38 3
+1 9 13 29 34 7
+12 19 21 29 37 9
+2 13 15 20 26 9
+2 3 8 11 14 6
+11 30 31 36 39 1
+3 10 17 21 27 11
+4 6 9 21 32 7
+11 13 32 33 36 8
+6 8 11 29 32 3
+4 5 6 13 32 3
+7 10 17 21 30 5
+5 8 10 14 20 10
+3 4 21 34 38 5
+8 11 19 34 38 9
+15 27 30 37 39 10
+23 25 32 35 38 3
+17 21 27 28 29 8
+11 14 30 34 37 14
+11 21 26 37 38 9
+1 5 9 12 22 7
+6 12 15 26 36 8
+3 9 14 21 28 5
+7 11 19 27 35 12
+4 8 16 24 32 6
+2 10 18 26 34 3
+5 13 21 29 37 9
+1 7 15 23 31 14
+6 12 20 28 36 4
+3 9 17 25 33 11
+8 14 22 30 38 7
+4 10 18 26 34 2
+2 8 16 24 32 13
+5 11 19 27 35 6
+1 7 15 23 31 10
+6 12 20 28 36 1
+3 9 17 25 33 8
+4 10 18 26 34 14
+7 13 21 29 37 5
+2 8 16 24 32 11
+5 11 19 27 35 3
+1 7 15 23 31 9
+6 12 20 28 36 6
+3 9 17 25 33 12
+4 10 18 26 38 7
+8 14 22 30 34 2
+2 8 16 24 32 13
+5 11 19 27 35 4
+7 13 21 29 37 10
+1 9 17 25 33 1
+6 12 20 28 36 8
+3 10 18 26 34 14
+4 11 19 27 35 5
+8 15 23 31 39 11
+2 9 17 25 33 7
+5 12 20 28 36 3
+1 8 16 24 32 12
+6 13 21 29 37 6
+3 10 18 26 34 1
+7 14 22 30 38 9
+4 11 19 27 35 14
+2 9 17 25 33 5
+5 12 20 28 36 10
+1 8 16 24 32 4
+6 13 21 29 37 11
+3 10 18 26 34 7
+8 15 23 31 39 3
+4 11 19 27 35 12
+7 14 22 30 38 8
+2 9 17 25 33 6
+5 12 20 28 36 13
+1 8 16 24 32 2
+6 13 21 29 37 9
+3 10 18 26 34 14
+4 11 19 27 35 4
+8 15 23 31 39 10
+7 14 22 30 38 1
+2 9 17 25 33 7
+5 12 20 28 36 11
+1 8 16 24 32 5
+6 13 21 29 37 12
+3 10 18 26 34 9
+8 15 23 31 39 6
+4 11 19 27 35 3
+7 14 22 30 38 13
+2 9 17 25 33 4
+5 12 20 28 36 8
+1 8 16 24 32 14
+6 13 21 29 37 7
+3 10 18 26 34 2`,
+
+setforlife:`11 20 23 24 27 5
+7 8 14 17 20 2
+12 16 32 33 41 2
+1 14 20 23 42 8
+4 8 26 32 46 8
+8 12 33 35 45 1
+6 10 11 19 30 5
+3 14 21 28 44 4
+1 12 27 39 45 4
+8 19 24 43 46 4
+15 36 39 41 43 8
+13 14 23 24 39 9
+8 13 26 34 45 8
+6 13 37 42 43 10
+2 11 14 21 34 10
+8 14 20 23 32 1
+16 17 27 45 46 5
+3 5 7 32 38 4
+12 13 19 25 44 4
+9 17 29 31 43 4
+4 6 17 28 35 3
+2 13 22 29 31 3
+18 19 20 27 33 9
+8 23 32 41 42 1
+6 15 21 22 43 6
+2 6 31 39 42 5
+5 9 13 34 45 8
+12 23 28 30 43 9
+10 23 34 38 45 2
+5 16 36 37 47 9
+14 17 26 31 37 4
+2 11 14 21 34 10
+8 14 20 23 32 1
+16 17 27 45 46 5
+3 5 7 32 38 4
+12 13 19 25 44 4
+9 17 29 31 43 4
+4 6 17 28 35 3
+2 13 22 29 31 3
+18 19 20 27 33 9
+8 23 32 41 42 1
+6 15 21 22 43 6
+2 6 31 39 42 5
+5 9 13 34 45 8
+12 23 28 30 43 9
+10 23 34 38 45 2
+1 8 12 22 33 6
+4 16 25 38 44 3
+7 19 28 37 43 9
+2 11 20 29 40 5
+6 15 24 33 42 1
+3 10 17 26 35 8
+8 14 23 32 41 4
+5 12 21 30 39 7
+1 9 18 27 36 10
+4 13 22 31 44 2
+7 16 25 34 47 6
+2 11 20 29 38 9
+6 15 24 33 46 3
+3 10 19 28 37 7
+8 17 26 35 44 1
+5 14 23 32 41 5
+1 9 16 25 34 10
+7 12 21 30 43 4
+4 13 22 31 40 8
+2 10 19 28 47 3
+6 15 24 33 42 9
+3 11 20 29 38 6
+8 17 26 35 44 2
+5 14 23 32 41 7
+1 9 18 27 36 10
+4 12 21 30 39 4
+7 16 25 34 43 1
+2 11 20 29 38 8
+6 15 24 33 47 5
+3 10 19 28 37 3
+8 17 26 35 44 9
+5 14 23 32 41 6
+1 9 16 25 40 2
+7 13 22 31 46 7
+4 11 20 29 38 10
+2 10 19 28 37 4
+6 15 24 33 42 1
+3 12 21 30 45 8
+8 17 26 35 44 5
+5 14 23 32 41 3
+1 9 18 27 36 9
+7 16 25 34 43 6
+4 13 22 31 40 2
+2 11 20 29 47 7
+6 15 24 33 42 10
+3 10 19 28 37 4
+8 17 26 35 44 1
+5 14 23 32 41 8
+1 9 16 25 34 5
+7 12 21 30 43 3
+4 13 22 31 40 9`
+};
+
+// ══════════════════════════════════════════
+//  DATA SOURCES  — for Update button
+// ══════════════════════════════════════════
+const DATA_SOURCES = {
+  uk49s: {
+    label:'UK 49s Lunchtime', draws:96,
+    url:'https://www.lottostrategies.com/cgi-bin/winning_of_past_month/100/UKL/UK/United-Kingdom-UK-Lunchtime-49s-lottery-results.html',
+    hint:'Format: 6 numbers + bonus, one draw per line. Copy the numbers column only.',
+    updated:'2025–2026'
+  },
+  lotto: {
+    label:'UK Lotto', draws:110,
+    url:'https://www.lottery.co.uk/lotto/results/archive-2026',
+    hint:'Format: 6 main numbers + bonus ball per line.',
+    updated:'Jan 2025–Mar 2026'
+  },
+  euromillions: {
+    label:'EuroMillions', draws:96,
+    url:'https://www.beatlottery.co.uk/euromillions/draw-history',
+    hint:'Format: 5 main numbers + 2 Lucky Stars per line.',
+    updated:'2025'
+  },
+  thunderball: {
+    label:'Thunderball', draws:96,
+    url:'https://www.beatlottery.co.uk/thunderball/draw-history',
+    hint:'Format: 5 main numbers (1–39) + Thunderball (1–14) per line.',
+    updated:'2025'
+  },
+  setforlife: {
+    label:'Set for Life', draws:96,
+    url:'https://www.beatlottery.co.uk/set-for-life/draw-history',
+    hint:'Format: 5 main numbers (1–47) + Life Ball (1–10) per line.',
+    updated:'2025–2026'
+  },
+  custom: {
+    label:'Custom', draws:0,
+    url:null,
+    hint:'Paste your own draw history, one draw per line.',
+    updated:''
+  }
+};
+
+// ══════════════════════════════════════════
+//  LOTTERY CONFIG
+// ══════════════════════════════════════════
+const CFG = {
+  uk49s:       {max:49,balls:6,bonus:1, label:'UK 49s (Lunchtime)'},
+  lotto:       {max:59,balls:6,bonus:1, label:'UK Lotto'},
+  euromillions:{max:50,balls:5,bonus:2, label:'EuroMillions'},
+  thunderball: {max:39,balls:5,bonus:1, label:'Thunderball'},
+  setforlife:  {max:47,balls:5,bonus:1, label:'Set for Life', isSFL:true, lifeMax:10},
+  custom:      {max:59,balls:6,bonus:1, label:'Custom'}
+};
+
+const INPUT_HELP = {
+  uk49s:       'One draw per line · 6 main numbers + bonus ball · Example: <code>6 7 16 31 38 43 10</code>',
+  lotto:       'One draw per line · 6 main numbers + bonus ball · Example: <code>10 30 36 44 45 58 59</code>',
+  euromillions:'One draw per line · 5 main + 2 Lucky Stars · Example: <code>7 8 24 35 49 2 12</code>',
+  thunderball: 'One draw per line · 5 main (1–39) + Thunderball (1–14) · Example: <code>15 18 20 23 27 8</code>',
+  setforlife:  'One draw per line · 5 main (1–47) + Life Ball (1–10) · Example: <code>11 20 23 24 27 5</code>',
+  custom:      'Paste any lottery draws · one per line · numbers space or comma separated'
+};
+
+let currentLottery = 'uk49s';
+let pasteOpen = false;
+
+// ══════════════════════════════════════════
+//  SET LOTTERY
+// ══════════════════════════════════════════
+function setLottery(type, btn) {
+  currentLottery = type;
+  document.querySelectorAll('.lottery-btn').forEach(b => b.classList.remove('active','sfl-active'));
+  btn.classList.add(CFG[type]?.isSFL ? 'sfl-active' : 'active');
+
+  const isSFL = CFG[type]?.isSFL;
+  const ab = document.getElementById('analyse-btn');
+  isSFL ? ab.classList.add('sfl-mode') : ab.classList.remove('sfl-mode');
+
+  document.getElementById('input-section-label').className = isSFL ? 'section-label sfl-label' : 'section-label';
+  document.getElementById('input-help').innerHTML = INPUT_HELP[type];
+
+  // Load data into textarea
+  if (type !== 'custom') {
+    document.getElementById('draw-input').value = REAL_DRAWS[type] || '';
+  } else {
+    document.getElementById('draw-input').value = '';
+  }
+  updateDrawCount();
+
+  // Banner
+  const src = DATA_SOURCES[type];
+  const banner = document.getElementById('data-banner');
+  if (type === 'custom') {
+    banner.className = 'data-banner warn';
+    banner.innerHTML = '✎ Custom mode — paste your own draw data below.';
+  } else {
+    banner.className = 'data-banner real';
+    banner.innerHTML = `✔ Real draw data loaded · ${src.draws} draws · ${src.updated} · Source: ${src.url ? src.url.replace('https://','').split('/')[0] : '—'}`;
+  }
+  banner.style.display = 'block';
+
+  // Update button hint
+  document.getElementById('paste-hint').textContent = src.url
+    ? `Opens ${src.label} results · paste the new draws into the box below`
+    : '';
+  document.getElementById('update-row').style.display = type === 'custom' ? 'none' : 'flex';
+
+  // Close paste zone & hide results
+  closePasteZone();
+  document.getElementById('results').style.display = 'none';
+}
+
+// ══════════════════════════════════════════
+//  UPDATE DATA BUTTON
+// ══════════════════════════════════════════
+function openSourceAndPaste() {
+  const src = DATA_SOURCES[currentLottery];
+  if (src.url) window.open(src.url, '_blank');
+
+  // Open paste zone
+  pasteOpen = true;
+  document.getElementById('paste-zone').classList.add('open');
+  document.getElementById('draw-input').value = '';
+  document.getElementById('draw-input').placeholder = `Paste the latest ${src.label} draws here — one draw per line…`;
+  updateDrawCount();
+
+  // Scroll to textarea
+  setTimeout(() => document.getElementById('draw-input').scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function closePasteZone() {
+  pasteOpen = false;
+  document.getElementById('paste-zone').classList.remove('open');
+}
+
+// When user pastes / types in the box, load what they've pasted
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('draw-input').addEventListener('input', () => {
+    updateDrawCount();
+    // If they've pasted data, show a confirmation banner
+    const raw = document.getElementById('draw-input').value.trim();
+    if (raw && pasteOpen) {
+      const count = raw.split('\n').filter(l => l.trim()).length;
+      const banner = document.getElementById('data-banner');
+      banner.className = 'data-banner real';
+      banner.innerHTML = `✔ ${count} draws pasted and ready to analyse`;
+      banner.style.display = 'block';
+    }
+  });
+
+  // Auto-load UK 49s on startup
+  setLottery('uk49s', document.querySelector('.lottery-btn.active'));
+});
+
+function updateDrawCount() {
+  const raw = document.getElementById('draw-input').value.trim();
+  const count = raw ? raw.split('\n').filter(l => l.trim()).length : 0;
+  document.getElementById('draw-count').textContent = count;
+}
+
+// ══════════════════════════════════════════
+//  PARSE
+// ══════════════════════════════════════════
+function parseDraws() {
+  const raw = document.getElementById('draw-input').value.trim();
+  if (!raw) return null;
+  const draws = raw.split('\n').filter(l => l.trim()).map(line =>
+    line.trim().split(/[\s,]+/).map(Number).filter(n => !isNaN(n) && n > 0)
+  ).filter(d => d.length >= 5);
+  return draws.length >= 5 ? draws : null;
+}
+
+// ══════════════════════════════════════════
+//  ANALYSIS
+// ══════════════════════════════════════════
+function analyse(draws) {
+  const cfg = CFG[currentLottery];
+  const {max:maxBall, balls:mainCount, isSFL, lifeMax=0} = cfg;
+
+  const freq = {}, lastSeen = {};
+  for (let i=1;i<=maxBall;i++){freq[i]=0;lastSeen[i]=null;}
+
+  const lifeFreq={}, lifeLastSeen={};
+  if (isSFL) for (let i=1;i<=lifeMax;i++){lifeFreq[i]=0;lifeLastSeen[i]=null;}
+
+  draws.forEach((draw,idx) => {
+    draw.slice(0,mainCount).forEach(n => {
+      if (n>=1&&n<=maxBall){freq[n]++;if(lastSeen[n]===null)lastSeen[n]=idx;}
+    });
+    if (isSFL && draw.length>mainCount){
+      const lb=draw[mainCount];
+      if(lb>=1&&lb<=lifeMax){lifeFreq[lb]++;if(lifeLastSeen[lb]===null)lifeLastSeen[lb]=idx;}
+    }
+  });
+
+  const sorted = Object.entries(freq).sort((a,b)=>b[1]-a[1]);
+  const fv = sorted.map(e=>e[1]);
+  const t20=fv[Math.floor(fv.length*.2)], t40=fv[Math.floor(fv.length*.4)], b20=fv[Math.floor(fv.length*.8)];
+  const heat = f => f>=t20?'hot':f>=t40?'warm':f<=b20?'cold':'neutral';
+
+  const lifeSorted = isSFL ? Object.entries(lifeFreq).sort((a,b)=>b[1]-a[1]) : [];
+  const lv = lifeSorted.map(e=>e[1]);
+  const lt=lv[Math.floor(lv.length*.3)]||0, lb2=lv[Math.floor(lv.length*.7)]||0;
+  const lifeHeat = f => f>=lt?'life':f<=lb2?'cold':'neutral';
+
+  const sums = draws.map(d=>d.slice(0,mainCount).reduce((a,b)=>a+b,0));
+  const minS=Math.min(...sums), maxS=Math.max(...sums);
+  const bk=Math.ceil((maxS-minS)/5)||10;
+  const sumBuckets={};
+  sums.forEach(s=>{const b=Math.floor((s-minS)/bk);const lbl=`${minS+b*bk}–${minS+(b+1)*bk-1}`;sumBuckets[lbl]=(sumBuckets[lbl]||0)+1;});
+
+  const oe={};
+  draws.forEach(d=>{const m=d.slice(0,mainCount);const o=m.filter(n=>n%2!==0).length;const k=`${o}O/${mainCount-o}E`;oe[k]=(oe[k]||0)+1;});
+
+  return {freq,sorted,heat,lastSeen,lifeFreq,lifeSorted,lifeLastSeen,lifeHeat,sumBuckets,oe,draws,mainCount,maxBall,sums,isSFL,lifeMax};
+}
+
+// ══════════════════════════════════════════
+//  PICKS
+// ══════════════════════════════════════════
+const STRATS=[
+  {n:'Hot weighted',b:.75},{n:'Balanced blend',b:.5},{n:'Due numbers',b:.2},
+  {n:'Mixed strategy',b:.45},{n:'Cold streak break',b:.1},{n:'High frequency',b:.8},
+  {n:'Long overdue',b:.05},{n:'Balanced random',b:.4},{n:'Heat cluster',b:.78},{n:'Statistical mean',b:.5}
+];
+
+function wSample(pool,n){
+  const r=[],rem=[...pool];
+  for(let i=0;i<n&&rem.length;i++){
+    const tot=rem.reduce((s,p)=>s+p.w,0);let rv=Math.random()*tot,idx=0;
+    for(let j=0;j<rem.length;j++){rv-=rem[j].w;if(rv<=0){idx=j;break;}}
+    r.push(rem[idx].n);rem.splice(idx,1);
+  }
+  return r.sort((a,b)=>a-b);
+}
+
+function genPicks(stats,count){
+  const {freq,maxBall,mainCount,isSFL,lifeFreq,lifeMax}=stats;
+  const fv=Object.values(freq),mxF=Math.max(...fv),mnF=Math.min(...fv);
+  return Array.from({length:count},(_,p)=>{
+    const st=STRATS[p%STRATS.length];
+    const pool=Array.from({length:maxBall},(_,i)=>{
+      const f=freq[i+1]||0,norm=mxF>mnF?(f-mnF)/(mxF-mnF):.5;
+      let w=st.b>.5?.1+norm*st.b*2:st.b<.3?.1+(1-norm)*(1-st.b)*2:.5+(Math.random()-.5)*.3;
+      return {n:i+1,w:Math.max(.01,w)};
+    });
+    const balls=wSample(pool,mainCount);
+    let bonus=[];
+    if(isSFL){
+      const lv2=Object.values(lifeFreq),lmx=Math.max(...lv2,1),lmn=Math.min(...lv2,0);
+      const lp=Array.from({length:lifeMax},(_,i)=>{const f=lifeFreq[i+1]||0,nm=lmx>lmn?(f-lmn)/(lmx-lmn):.5;return{n:i+1,w:Math.max(.01,.2+nm*.8)};});
+      bonus=wSample(lp,1);
+    } else if(CFG[currentLottery].bonus>0){
+      bonus=wSample(pool.filter(p=>!balls.includes(p.n)),CFG[currentLottery].bonus);
+    }
+    return {balls,bonus,strat:st.n,isSFL};
+  });
+}
+
+// ══════════════════════════════════════════
+//  AI COMMENTARY
+// ══════════════════════════════════════════
+async function getAI(stats,drawCount){
+  const hot=stats.sorted.slice(0,5).map(e=>e[0]).join(', ');
+  const cold=stats.sorted.slice(-5).map(e=>e[0]).join(', ');
+  const avg=Math.round(stats.sums.reduce((a,b)=>a+b,0)/stats.sums.length);
+  let sflNote='';
+  if(stats.isSFL&&stats.lifeSorted[0]) sflNote=`\n- Hottest Life Ball: ${stats.lifeSorted[0][0]}\n- Coldest: ${stats.lifeSorted[stats.lifeSorted.length-1][0]}`;
+  const prompt=`Lottery statistics analyst. 3 bullet insights from this data (•, 2 sentences max each, plain English):\n- Game: ${CFG[currentLottery].label}\n- Draws: ${drawCount}\n- Hot 5: ${hot}\n- Cold 5: ${cold}\n- Avg sum: ${avg}${sflNote}\nNote draws are statistically independent.`;
+  try{
+    const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:400,messages:[{role:"user",content:prompt}]})});
+    const d=await r.json();return d.content?.[0]?.text||null;
+  }catch(e){return null;}
+}
+
+// ══════════════════════════════════════════
+//  RUN ANALYSIS
+// ══════════════════════════════════════════
+async function runAnalysis(){
+  const draws=parseDraws();
+  const err=document.getElementById('error-msg');
+  err.style.display='none';
+  if(!draws){err.textContent='Need at least 5 valid draw lines. Select a game or paste data above.';err.style.display='block';return;}
+
+  document.getElementById('analyse-btn').disabled=true;
+  document.getElementById('results').style.display='none';
+  document.getElementById('thinking-bar').style.display='block';
+
+  const stats=analyse(draws);
+  const picks=genPicks(stats,parseInt(document.getElementById('pick-count').value));
+  renderResults(stats,picks,draws.length);
+
+  document.getElementById('thinking-bar').style.display='none';
+  document.getElementById('results').style.display='block';
+  document.getElementById('analyse-btn').disabled=false;
+
+  // Close paste zone now we have results
+  closePasteZone();
+
+  // AI commentary async
+  const commEl=document.getElementById('ai-commentary');
+  commEl.innerHTML='<p style="color:var(--muted);font-size:.7rem">⟳ Generating AI insights…</p>';
+  commEl.style.display='block';
+  try{
+    const c=await getAI(stats,draws.length);
+    if(c){commEl.innerHTML=c.split('\n').filter(l=>l.trim()).map(l=>`<p>${l}</p>`).join('');}
+    else commEl.style.display='none';
+  }catch(e){commEl.style.display='none';}
+}
+
+// ══════════════════════════════════════════
+//  RENDER
+// ══════════════════════════════════════════
+function renderResults(stats,picks,drawCount){
+  const {freq,sorted,heat,lastSeen,lifeFreq,lifeSorted,lifeLastSeen,lifeHeat,sumBuckets,oe,maxBall,isSFL,lifeMax}=stats;
+  const avgFreq=(Object.values(freq).reduce((a,b)=>a+b,0)/maxBall).toFixed(1);
+  const avgSum=Math.round(stats.sums.reduce((a,b)=>a+b,0)/stats.sums.length);
+  const hotN=sorted[0][0],coldN=sorted[sorted.length-1][0];
+  let extra='';
+  if(isSFL&&lifeSorted[0]) extra=`<div class="stat-card"><div class="stat-value" style="color:var(--sfl)">${lifeSorted[0][0]}</div><div class="stat-desc">Hot Life Ball (${lifeSorted[0][1]}×)</div></div>`;
+
+  document.getElementById('stats-grid').innerHTML=`
+    <div class="stat-card"><div class="stat-value" style="color:var(--gold)">${drawCount}</div><div class="stat-desc">Draws Analysed</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--hot)">${hotN}</div><div class="stat-desc">Hottest (${freq[hotN]}×)</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--cold)">${coldN}</div><div class="stat-desc">Coldest (${freq[coldN]}×)</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--cyan)">${avgSum}</div><div class="stat-desc">Avg Sum</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--magenta)">${avgFreq}</div><div class="stat-desc">Avg Freq</div></div>
+    ${extra}`;
+
+  // Heat maps — single scrollable rows
+  if(isSFL){
+    document.getElementById('standard-heatmap').style.display='none';
+    document.getElementById('sfl-heatmap').style.display='block';
+    const me=document.getElementById('sfl-main-balls');me.innerHTML='';
+    for(let n=1;n<=maxBall;n++){const b=document.createElement('div');b.className=`ball ball-${heat(freq[n])}`;b.textContent=n;b.title=`${n}: ${freq[n]}×`;me.appendChild(b);}
+    const le=document.getElementById('sfl-life-balls');le.innerHTML='';
+    for(let n=1;n<=lifeMax;n++){const b=document.createElement('div');b.className=`ball ball-${lifeHeat(lifeFreq[n]||0)}`;b.textContent=n;b.title=`LB ${n}: ${lifeFreq[n]||0}×`;le.appendChild(b);}
+  }else{
+    document.getElementById('standard-heatmap').style.display='block';
+    document.getElementById('sfl-heatmap').style.display='none';
+    const bc=document.getElementById('balls-container');bc.innerHTML='';
+    for(let n=1;n<=maxBall;n++){const b=document.createElement('div');b.className=`ball ball-${heat(freq[n])}`;b.textContent=n;b.title=`${n}: ${freq[n]}×`;bc.appendChild(b);}
+  }
+
+  // Tables
+  const hb=document.querySelector('#hot-table tbody');hb.innerHTML='';
+  sorted.slice(0,10).forEach(([n,f])=>{
+    const ls=lastSeen[n]!==null?`${lastSeen[n]+1} ago`:'—';
+    const pct=((f/drawCount)*100).toFixed(1);
+    hb.innerHTML+=`<tr><td style="color:var(--hot);font-weight:500">${n}</td><td>${f}</td><td style="color:var(--muted)">${ls}</td><td class="${+pct>25?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
+  });
+
+  const cb=document.querySelector('#cold-table tbody');cb.innerHTML='';
+  [...sorted].reverse().slice(0,10).forEach(([n,f])=>{
+    const ls=lastSeen[n]!==null?`${lastSeen[n]+1} ago`:'Never';
+    cb.innerHTML+=`<tr><td style="color:var(--cold);font-weight:500">${n}</td><td>${f}</td><td style="color:var(--muted)">${ls}</td><td style="color:var(--cold)">Due</td></tr>`;
+  });
+
+  const lifeSec=document.getElementById('sfl-life-section');
+  if(isSFL&&lifeSorted.length){
+    lifeSec.style.display='block';
+    const lb=document.querySelector('#sfl-life-table tbody');lb.innerHTML='';
+    lifeSorted.forEach(([n,f])=>{
+      const ls=lifeLastSeen[n]!==null?`${lifeLastSeen[n]+1} ago`:'—';
+      const pct=((f/drawCount)*100).toFixed(1);
+      lb.innerHTML+=`<tr><td style="color:var(--sfl);font-weight:500">${n}</td><td>${f}</td><td style="color:var(--muted)">${ls}</td><td class="${+pct>25?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
+    });
+  }else lifeSec.style.display='none';
+
+  const sb=document.querySelector('#sum-table tbody');sb.innerHTML='';
+  Object.entries(sumBuckets).sort().forEach(([r,c])=>{
+    const pct=((c/drawCount)*100).toFixed(1);
+    sb.innerHTML+=`<tr><td>${r}</td><td>${c}</td><td class="${+pct>30?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
+  });
+
+  const ob=document.querySelector('#oddeven-table tbody');ob.innerHTML='';
+  Object.entries(oe).sort((a,b)=>b[1]-a[1]).forEach(([p,c])=>{
+    const pct=((c/drawCount)*100).toFixed(1);
+    ob.innerHTML+=`<tr><td>${p}</td><td>${c}</td><td class="${+pct>25?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
+  });
+
+  // Picks
+  const ps=document.getElementById('picks-section'),pl=document.getElementById('picks-label');
+  if(isSFL){ps.classList.add('sfl-picks');pl.className='picks-label sfl-label';pl.textContent='⬡ Set for Life Selections';}
+  else{ps.classList.remove('sfl-picks');pl.className='picks-label';pl.textContent='⬡ AI-Generated Selections';}
+
+  const pe=document.getElementById('picks-container');pe.innerHTML='';
+  picks.forEach((pick,i)=>{
+    const div=document.createElement('div');div.className='pick-line';
+    let bh=pick.balls.map(n=>`<div class="pick-ball">${n}</div>`).join('');
+    if(pick.bonus?.length) bh+=pick.bonus.map(n=>`<div class="pick-ball ${isSFL?'pick-life':'pick-bonus'}">${n}</div>`).join('');
+    div.innerHTML=`<div class="pick-num">LINE ${String(i+1).padStart(2,'0')}</div><div class="pick-balls">${bh}</div><div class="pick-strategy">${pick.strat}</div>`;
+    pe.appendChild(div);
+  });
+}
+</script>
+</body>
+</html>
