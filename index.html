@@ -5,310 +5,651 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>LottoOracle — EngSurv (Systems) Ltd</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --void:#0a0a0f; --panel:#16161f; --border:#2a2a3a;
-  --gold:#f5c842; --gold-dim:#a88c2a;
-  --cyan:#4fd1c5; --magenta:#e040fb;
-  --text:#e8e8f0; --muted:#7a7a9a;
-  --hot:#ff6b6b; --cold:#74b9ff; --warm:#fda85c;
-  --sfl:#7c6aff; --sfl-dim:#4a3fb5;
+  /* EngSurv brand palette — derived from HRV Coach + BwydGlân */
+  --navy:      #1a2e3b;
+  --navy-mid:  #243447;
+  --teal:      #0a9e8f;
+  --teal-dark: #077d71;
+  --teal-light:#e6f7f5;
+  --teal-mid:  #b2e4df;
+  --green:     #2a7a3b;
+  --bg:        #f2f4f6;
+  --surface:   #ffffff;
+  --border:    #dde1e6;
+  --border-light: #eef0f3;
+  --text:      #1a2e3b;
+  --text-mid:  #4a5568;
+  --text-muted:#8492a6;
+  --hot:       #d94f3d;
+  --hot-light: #fdf0ee;
+  --warm:      #e07b2a;
+  --warm-light:#fef3e6;
+  --cold:      #2a6cb5;
+  --cold-light:#eef4fd;
+  --sfl:       #6b46c1;
+  --sfl-light: #f3f0fd;
+  --gold:      #d4a017;
+  --gold-light:#fdf8e6;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+  --shadow:    0 4px 12px rgba(0,0,0,.08);
+  --radius:    8px;
+  --radius-sm: 5px;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
 body {
-  background:var(--void); color:var(--text);
-  font-family:'Inter',sans-serif;
-  min-height:100vh; overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter', system-ui, sans-serif;
+  font-size:14px;
+  min-height:100vh;
+  line-height:1.5;
 }
 
-/* ── HEADER ── */
+/* ══════════════════════════════════════
+   HEADER
+══════════════════════════════════════ */
 header {
-  position:relative; z-index:10;
-  padding:1.1rem 1rem 1rem;
-  border-bottom:1px solid var(--border);
-  background:linear-gradient(180deg,rgba(245,200,66,.05) 0%,transparent 100%);
-}
-.header-inner {
-  max-width:1100px; margin:0 auto;
-  display:flex; align-items:center; justify-content:space-between; gap:.5rem;
-}
-.logo { font-family:'Syne',sans-serif; font-weight:800; font-size:1.3rem; letter-spacing:-.03em; line-height:1; }
-.logo span { color:var(--gold); }
-.tagline { font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-top:.2rem; }
-.header-right { text-align:right; flex-shrink:0; }
-.engsurv-brand { font-family:'Syne',sans-serif; font-weight:700; font-size:.7rem; color:var(--text); }
-.engsurv-brand span { color:var(--gold); }
-.engsurv-sub { font-family:'DM Mono',monospace; font-size:.52rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-top:.1rem; }
-.version-badge {
-  display:inline-block; margin-top:.3rem;
-  font-family:'DM Mono',monospace; font-size:.52rem;
-  padding:.18rem .5rem; border:1px solid var(--gold-dim); color:var(--gold);
-  border-radius:2px; letter-spacing:.07em; text-transform:uppercase;
+  background:var(--navy);
+  padding:0 1.25rem;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 8px rgba(0,0,0,.2);
 }
 
-/* ── MAIN ── */
-main { position:relative; z-index:10; max-width:1100px; margin:0 auto; padding:1rem; }
+.header-left { display:flex; align-items:center; gap:.75rem; }
 
-/* ── GAME SELECTOR — 3-column grid, all visible ── */
-.selector-label { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:.45rem; }
+.logo-mark {
+  width:30px; height:30px;
+  background:var(--teal);
+  border-radius:6px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.75rem; font-weight:700; color:white;
+  letter-spacing:-.02em;
+  flex-shrink:0;
+}
+
+.logo-text {
+  font-size:1rem; font-weight:600;
+  color:white; letter-spacing:-.01em;
+}
+.logo-text span { color:var(--teal); }
+
+.header-brand {
+  font-size:.65rem;
+  color:rgba(255,255,255,.45);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-left:auto;
+}
+
+/* ══════════════════════════════════════
+   MAIN LAYOUT
+══════════════════════════════════════ */
+.app-body {
+  max-width:900px;
+  margin:0 auto;
+  padding:1.25rem 1rem 3rem;
+}
+
+/* ══════════════════════════════════════
+   PAGE TITLE BLOCK
+══════════════════════════════════════ */
+.page-title-block {
+  margin-bottom:1.25rem;
+}
+.page-eyebrow {
+  font-size:.65rem;
+  font-weight:600;
+  color:var(--teal);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:.25rem;
+}
+.page-title {
+  font-size:1.4rem;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:-.02em;
+  line-height:1.2;
+}
+.page-subtitle {
+  font-size:.8rem;
+  color:var(--text-muted);
+  margin-top:.2rem;
+}
+
+/* ══════════════════════════════════════
+   GAME SELECTOR
+══════════════════════════════════════ */
+.selector-label {
+  font-size:.65rem;
+  font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:.5rem;
+}
+
 .selector-row {
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:.4rem; margin-bottom:1rem;
+  gap:.4rem;
+  margin-bottom:1.25rem;
 }
+
+@media(min-width:540px) {
+  .selector-row { grid-template-columns:repeat(6,1fr); }
+}
+
 .lottery-btn {
-  font-family:'DM Mono',monospace; font-size:.6rem;
-  padding:.55rem .3rem; width:100%; text-align:center;
-  background:var(--panel); border:1px solid var(--border);
-  color:var(--muted); cursor:pointer;
-  letter-spacing:.03em; text-transform:uppercase;
-  transition:all .18s; border-radius:3px; white-space:nowrap;
-  overflow:hidden; text-overflow:ellipsis;
+  font-family:'Inter',sans-serif;
+  font-size:.72rem;
+  font-weight:500;
+  padding:.55rem .5rem;
+  background:var(--surface);
+  border:1.5px solid var(--border);
+  color:var(--text-mid);
+  cursor:pointer;
+  border-radius:var(--radius-sm);
+  transition:all .15s;
+  text-align:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  line-height:1.3;
+  box-shadow:var(--shadow-sm);
 }
-.lottery-btn:hover { border-color:var(--gold-dim); color:var(--text); }
-.lottery-btn.active { background:var(--gold); color:var(--void); border-color:var(--gold); font-weight:500; }
-.lottery-btn.sfl-active { background:var(--sfl); color:white; border-color:var(--sfl); }
-
-/* ── BANNERS ── */
-.data-banner {
-  border-radius:3px; padding:.65rem 1rem; margin-bottom:1rem;
-  font-family:'DM Mono',monospace; font-size:.63rem; letter-spacing:.03em; line-height:1.55; display:none;
+.lottery-btn:hover {
+  border-color:var(--teal);
+  color:var(--teal);
+  background:#fff;
 }
-.data-banner.real  { background:rgba(79,209,197,.07); border:1px solid rgba(79,209,197,.25); color:var(--cyan); }
-.data-banner.warn  { background:rgba(245,200,66,.07); border:1px solid var(--gold-dim); color:var(--gold); }
-.data-banner.paste { background:rgba(253,168,92,.07); border:1px solid rgba(253,168,92,.35); color:var(--warm); }
+.lottery-btn.active {
+  background:var(--teal);
+  border-color:var(--teal);
+  color:white;
+  font-weight:600;
+  box-shadow:0 2px 8px rgba(10,158,143,.3);
+}
+.lottery-btn.sfl-active {
+  background:var(--sfl);
+  border-color:var(--sfl);
+  color:white;
+  font-weight:600;
+  box-shadow:0 2px 8px rgba(107,70,193,.3);
+}
 
-/* ── UPDATE DATA BUTTON ROW ── */
+/* ══════════════════════════════════════
+   BANNERS
+══════════════════════════════════════ */
+.banner {
+  border-radius:var(--radius-sm);
+  padding:.65rem 1rem;
+  margin-bottom:1rem;
+  font-size:.75rem;
+  line-height:1.5;
+  display:none;
+  border-left:3px solid;
+}
+.banner.teal  { background:var(--teal-light); border-color:var(--teal); color:var(--teal-dark); }
+.banner.amber { background:var(--warm-light); border-color:var(--warm); color:#8a4a10; }
+.banner.paste { background:var(--gold-light); border-color:var(--gold); color:#7a5500; }
+
+/* ══════════════════════════════════════
+   UPDATE DATA ROW
+══════════════════════════════════════ */
 .update-row {
-  display:flex; gap:.5rem; align-items:center; margin-bottom:.9rem; flex-wrap:wrap;
+  display:flex; gap:.6rem; align-items:center;
+  margin-bottom:1rem; flex-wrap:wrap;
 }
 .update-btn {
-  font-family:'DM Mono',monospace; font-size:.65rem;
-  padding:.52rem 1rem; background:transparent;
-  border:1px solid var(--cyan); color:var(--cyan);
-  cursor:pointer; border-radius:3px; letter-spacing:.04em;
-  transition:all .18s; white-space:nowrap;
+  font-family:'Inter',sans-serif;
+  font-size:.75rem; font-weight:500;
+  padding:.5rem 1rem;
+  background:transparent;
+  border:1.5px solid var(--teal);
+  color:var(--teal);
+  cursor:pointer; border-radius:var(--radius-sm);
+  transition:all .15s; white-space:nowrap;
 }
-.update-btn:hover { background:rgba(79,209,197,.1); }
-.paste-hint { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--muted); line-height:1.5; }
+.update-btn:hover { background:var(--teal-light); }
+.paste-hint { font-size:.72rem; color:var(--text-muted); }
 
-/* ── PASTE ZONE ── */
+/* ══════════════════════════════════════
+   CARD
+══════════════════════════════════════ */
+.card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:1.1rem;
+  margin-bottom:1rem;
+  box-shadow:var(--shadow-sm);
+}
+
+.card-label {
+  font-size:.65rem;
+  font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  margin-bottom:.75rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.card-label::after {
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border-light);
+}
+.card-label.teal-label { color:var(--teal-dark); }
+.card-label.sfl-label  { color:var(--sfl); }
+
+/* ══════════════════════════════════════
+   INPUT
+══════════════════════════════════════ */
 .paste-zone { display:none; }
 .paste-zone.open { display:block; }
-.input-section { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:1rem; margin-bottom:1rem; }
-.section-label {
-  font-family:'DM Mono',monospace; font-size:.58rem; color:var(--gold);
-  letter-spacing:.12em; text-transform:uppercase; margin-bottom:.6rem;
-  display:flex; align-items:center; gap:.45rem;
+
+.input-help {
+  font-size:.75rem;
+  color:var(--text-muted);
+  margin-bottom:.6rem;
+  line-height:1.55;
 }
-.section-label::after { content:''; flex:1; height:1px; background:var(--border); }
-.section-label.sfl-label { color:var(--sfl); }
-.input-help { font-size:.7rem; color:var(--muted); margin-bottom:.6rem; line-height:1.55; }
-.input-help code { font-family:'DM Mono',monospace; font-size:.65rem; color:var(--cyan); background:rgba(79,209,197,.08); padding:.1rem .3rem; border-radius:2px; }
+.input-help code {
+  font-family:'SF Mono','Fira Code',monospace;
+  font-size:.7rem;
+  color:var(--teal-dark);
+  background:var(--teal-light);
+  padding:.1rem .35rem;
+  border-radius:3px;
+}
+
 textarea {
-  width:100%; background:var(--void); border:1px solid var(--border); color:var(--text);
-  font-family:'DM Mono',monospace; font-size:.7rem; padding:.75rem;
-  border-radius:3px; resize:vertical; min-height:100px; line-height:1.8;
-  transition:border-color .18s;
+  width:100%;
+  background:var(--bg);
+  border:1.5px solid var(--border);
+  color:var(--text);
+  font-family:'SF Mono','Fira Code',monospace;
+  font-size:.72rem;
+  padding:.75rem;
+  border-radius:var(--radius-sm);
+  resize:vertical;
+  min-height:110px;
+  line-height:1.8;
+  transition:border-color .15s;
 }
-textarea:focus { outline:none; border-color:var(--gold-dim); }
-textarea::placeholder { color:#3a3a5a; }
-.draw-count { font-family:'DM Mono',monospace; font-size:.62rem; color:var(--muted); margin-top:.3rem; text-align:right; }
-.draw-count span { color:var(--cyan); }
+textarea:focus { outline:none; border-color:var(--teal); }
+textarea::placeholder { color:var(--text-muted); }
 
-/* ── CONTROLS ── */
-.controls-row { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; margin-bottom:1rem; }
+.draw-count {
+  font-size:.7rem;
+  color:var(--text-muted);
+  margin-top:.35rem;
+  text-align:right;
+}
+.draw-count span { color:var(--teal); font-weight:600; }
+
+/* ══════════════════════════════════════
+   CONTROLS
+══════════════════════════════════════ */
+.controls-row {
+  display:flex; gap:.6rem; align-items:center;
+  flex-wrap:wrap; margin-bottom:1.1rem;
+}
+
 .analyse-btn {
-  font-family:'Syne',sans-serif; font-weight:700; font-size:.82rem;
-  letter-spacing:.04em; padding:.72rem 1.5rem;
-  background:var(--gold); color:var(--void);
-  border:none; cursor:pointer; border-radius:3px;
-  transition:all .18s; text-transform:uppercase; flex-shrink:0;
+  font-family:'Inter',sans-serif;
+  font-size:.85rem; font-weight:600;
+  padding:.65rem 1.5rem;
+  background:var(--navy);
+  color:white;
+  border:none; cursor:pointer;
+  border-radius:var(--radius-sm);
+  transition:all .15s;
+  letter-spacing:-.01em;
 }
-.analyse-btn:hover { background:#f7d45a; transform:translateY(-1px); }
-.analyse-btn:active { transform:translateY(0); }
+.analyse-btn:hover { background:var(--navy-mid); }
+.analyse-btn:active { transform:translateY(1px); }
 .analyse-btn:disabled { opacity:.4; cursor:not-allowed; transform:none; }
-.analyse-btn.sfl-mode { background:var(--sfl); color:white; }
-.analyse-btn.sfl-mode:hover { background:#9882ff; }
-.count-selector {
-  font-family:'DM Mono',monospace; font-size:.68rem;
-  padding:.72rem .75rem; background:var(--panel);
-  border:1px solid var(--border); color:var(--text);
-  border-radius:3px; cursor:pointer;
-}
-.count-label { font-family:'DM Mono',monospace; font-size:.62rem; color:var(--muted); }
+.analyse-btn.sfl-mode { background:var(--sfl); }
+.analyse-btn.sfl-mode:hover { background:#5a39a8; }
 
-/* ── THINKING ── */
+.count-selector {
+  font-family:'Inter',sans-serif;
+  font-size:.78rem;
+  padding:.65rem .75rem;
+  background:var(--surface);
+  border:1.5px solid var(--border);
+  color:var(--text);
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  box-shadow:var(--shadow-sm);
+}
+.count-selector:focus { outline:none; border-color:var(--teal); }
+
+.count-label { font-size:.75rem; color:var(--text-muted); }
+
+/* ══════════════════════════════════════
+   THINKING
+══════════════════════════════════════ */
 .thinking-bar {
-  display:none; background:var(--panel); border:1px solid var(--border);
-  border-radius:3px; padding:.9rem 1.1rem; margin-bottom:1rem;
-  font-family:'DM Mono',monospace; font-size:.68rem; color:var(--cyan); letter-spacing:.04em;
+  display:none;
+  background:var(--teal-light);
+  border:1px solid var(--teal-mid);
+  border-radius:var(--radius-sm);
+  padding:.8rem 1rem;
+  margin-bottom:1rem;
+  font-size:.78rem;
+  color:var(--teal-dark);
 }
 .thinking-bar .dots::after { content:''; animation:dots 1.5s infinite; }
 @keyframes dots { 0%{content:''} 33%{content:'.'} 66%{content:'..'} 100%{content:'...'} }
 
-/* ── STAT CARDS ── */
+/* ══════════════════════════════════════
+   STAT CARDS
+══════════════════════════════════════ */
 .stats-grid {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:.6rem; margin-bottom:1rem;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:.6rem;
+  margin-bottom:1rem;
 }
-@media(min-width:600px) { .stats-grid { grid-template-columns:repeat(5,1fr); } }
-.stat-card { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:.9rem .75rem; }
-.stat-value { font-family:'Syne',sans-serif; font-weight:800; font-size:1.6rem; line-height:1; margin-bottom:.2rem; }
-.stat-desc { font-family:'DM Mono',monospace; font-size:.52rem; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; line-height:1.4; }
+@media(min-width:560px) {
+  .stats-grid { grid-template-columns:repeat(5,1fr); gap:.75rem; }
+}
 
-/* ── HEAT MAP — single scrollable row ── */
-.freq-panel { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:1rem; margin-bottom:1rem; }
-.heat-legend { display:flex; gap:.9rem; margin-top:.6rem; flex-wrap:wrap; }
-.legend-item { display:flex; align-items:center; gap:.3rem; font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted); letter-spacing:.05em; text-transform:uppercase; }
-.legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.stat-card {
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:.9rem .85rem;
+  box-shadow:var(--shadow-sm);
+}
+.stat-value {
+  font-size:1.65rem;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:.2rem;
+  letter-spacing:-.02em;
+}
+.stat-desc {
+  font-size:.6rem;
+  font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  line-height:1.35;
+}
 
-/* ── HEAT MAP BALLS — wrap to show all, no horizontal scroll ── */
+/* ══════════════════════════════════════
+   HEAT MAP BALLS
+   ~10 per row on mobile, all visible, wrap
+══════════════════════════════════════ */
 .balls-row {
-  display:flex; flex-direction:row; flex-wrap:wrap;
-  gap:.28rem; margin-top:.75rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.3rem;
+  margin-top:.75rem;
 }
 
 .ball {
-  /* Size to fit ~10 per row on a 390px phone with 1rem padding each side */
-  width:clamp(26px, calc((100vw - 2rem - 5 * .28rem) / 10), 34px);
-  height:clamp(26px, calc((100vw - 2rem - 5 * .28rem) / 10), 34px);
+  width:clamp(27px, calc((100vw - 2.5rem - 9 * .3rem) / 10), 33px);
+  height:clamp(27px, calc((100vw - 2.5rem - 9 * .3rem) / 10), 33px);
   flex-shrink:0;
-  border-radius:50%; display:flex; align-items:center; justify-content:center;
-  font-family:'DM Mono',monospace; font-weight:500;
-  font-size:clamp(.5rem, 1.8vw, .64rem);
-  border:2px solid transparent; cursor:default; transition:transform .15s;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:clamp(.52rem, 1.6vw, .62rem);
+  font-weight:600;
+  cursor:default;
+  transition:transform .12s;
+  border:1.5px solid transparent;
 }
-.ball:hover { transform:scale(1.15); }
-.ball-hot     { background:radial-gradient(circle at 35% 35%,#ff9a9a,var(--hot));  color:white;       border-color:rgba(255,107,107,.4); }
-.ball-warm    { background:radial-gradient(circle at 35% 35%,#ffc89a,var(--warm)); color:var(--void); border-color:rgba(253,168,92,.4); }
-.ball-neutral { background:radial-gradient(circle at 35% 35%,#888,#3a3a3a);        color:white;       border-color:rgba(255,255,255,.08); }
-.ball-cold    { background:radial-gradient(circle at 35% 35%,#a8d8ff,var(--cold)); color:var(--void); border-color:rgba(116,185,255,.4); }
-.ball-life    { background:radial-gradient(circle at 35% 35%,#b3aaff,var(--sfl));  color:white;       border-color:rgba(124,106,255,.5); }
+.ball:hover { transform:scale(1.18); }
 
-/* ── SFL DUAL POOL ── */
-.sfl-pools { display:grid; grid-template-columns:1fr; gap:.8rem; margin-bottom:1rem; }
-@media(min-width:600px) { .sfl-pools { grid-template-columns:2fr 1fr; } }
+.ball-hot     { background:#fde8e6; color:var(--hot);  border-color:#f5c5c0; }
+.ball-warm    { background:#fef0e0; color:var(--warm); border-color:#f5d9b0; }
+.ball-neutral { background:#f2f4f6; color:var(--text-mid); border-color:var(--border); }
+.ball-cold    { background:#e8f0fc; color:var(--cold); border-color:#b8cfef; }
+.ball-life    { background:var(--sfl-light); color:var(--sfl); border-color:#c4b3e8; }
 
-/* ── TABLES ── */
-.table-grid { display:grid; grid-template-columns:1fr; gap:.8rem; margin-bottom:1rem; }
-@media(min-width:560px) { .table-grid { grid-template-columns:1fr 1fr; } }
+.heat-legend {
+  display:flex; gap:1rem; flex-wrap:wrap; margin-top:.65rem;
+}
+.legend-item {
+  display:flex; align-items:center; gap:.3rem;
+  font-size:.65rem; font-weight:500; color:var(--text-muted);
+}
+.legend-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
 
-.tbl-panel { background:var(--panel); border:1px solid var(--border); border-radius:4px; padding:1rem; }
+/* ══════════════════════════════════════
+   SFL DUAL POOL
+══════════════════════════════════════ */
+.sfl-pools {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:.75rem;
+  margin-bottom:1rem;
+}
+@media(min-width:560px) {
+  .sfl-pools { grid-template-columns:2fr 1fr; }
+}
+
+/* ══════════════════════════════════════
+   TABLES
+══════════════════════════════════════ */
+.table-grid {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:.75rem;
+  margin-bottom:1rem;
+}
+@media(min-width:560px) {
+  .table-grid { grid-template-columns:1fr 1fr; }
+}
+
 .pattern-table { width:100%; border-collapse:collapse; margin-top:.6rem; }
 .pattern-table th {
-  font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted);
-  letter-spacing:.08em; text-transform:uppercase; text-align:left;
-  padding:.38rem .55rem; border-bottom:1px solid var(--border);
+  font-size:.62rem;
+  font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-align:left;
+  padding:.4rem .6rem;
+  border-bottom:1.5px solid var(--border-light);
 }
 .pattern-table td {
-  font-family:'DM Mono',monospace; font-size:.68rem;
-  padding:.42rem .55rem; border-bottom:1px solid rgba(42,42,58,.45);
+  font-size:.78rem;
+  padding:.45rem .6rem;
+  border-bottom:1px solid var(--border-light);
+  color:var(--text);
 }
 .pattern-table tr:last-child td { border-bottom:none; }
-.val-high { color:var(--hot); } .val-med { color:var(--warm); } .val-low { color:var(--cold); }
+.pattern-table tr:hover td { background:var(--bg); }
 
-/* ── AI COMMENTARY ── */
+.num-hot  { color:var(--hot);  font-weight:600; }
+.num-cold { color:var(--cold); font-weight:600; }
+.num-sfl  { color:var(--sfl);  font-weight:600; }
+.val-high { color:var(--hot); }
+.val-med  { color:var(--warm); }
+.val-low  { color:var(--cold); }
+
+/* ══════════════════════════════════════
+   AI COMMENTARY
+══════════════════════════════════════ */
 .ai-commentary {
-  background:var(--panel); border:1px solid var(--border);
-  border-left:3px solid var(--cyan); border-radius:4px;
-  padding:1rem 1.1rem; margin-bottom:1rem;
+  background:var(--teal-light);
+  border:1px solid var(--teal-mid);
+  border-left:3px solid var(--teal);
+  border-radius:var(--radius-sm);
+  padding:1rem 1.1rem;
+  margin-bottom:1rem;
 }
-.ai-commentary p { font-size:.75rem; line-height:1.7; color:var(--text); margin-bottom:.35rem; }
+.ai-commentary p {
+  font-size:.78rem;
+  line-height:1.7;
+  color:var(--navy);
+  margin-bottom:.35rem;
+}
 .ai-commentary p:last-child { margin-bottom:0; }
 
-/* ── PICKS ── */
-.picks-section {
-  background:linear-gradient(135deg,rgba(245,200,66,.05) 0%,rgba(79,209,197,.03) 100%);
-  border:1px solid var(--gold-dim); border-radius:4px;
-  padding:1rem; margin-bottom:1rem;
+/* ══════════════════════════════════════
+   PICKS
+══════════════════════════════════════ */
+.picks-header {
+  display:flex; align-items:center;
+  justify-content:space-between;
+  margin-bottom:.35rem;
 }
-.picks-section.sfl-picks {
-  background:linear-gradient(135deg,rgba(124,106,255,.07) 0%,rgba(79,209,197,.03) 100%);
-  border-color:var(--sfl-dim);
+.picks-title {
+  font-size:.65rem; font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:.07em; text-transform:uppercase;
 }
-.picks-label { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--gold); letter-spacing:.12em; text-transform:uppercase; margin-bottom:.35rem; }
-.picks-label.sfl-label { color:var(--sfl); }
-.picks-disclaimer { font-size:.65rem; color:var(--muted); margin-bottom:.85rem; line-height:1.5; }
+.picks-title.sfl { color:var(--sfl); }
+.picks-disclaimer {
+  font-size:.7rem;
+  color:var(--text-muted);
+  margin-bottom:1rem;
+  line-height:1.5;
+  padding:.6rem .8rem;
+  background:var(--gold-light);
+  border-left:3px solid var(--gold);
+  border-radius:var(--radius-sm);
+}
 
-.pick-line { display:flex; align-items:flex-start; gap:.6rem; margin-bottom:.85rem; flex-wrap:wrap; }
-.pick-num { font-family:'DM Mono',monospace; font-size:.55rem; color:var(--muted); letter-spacing:.06em; width:42px; flex-shrink:0; padding-top:.55rem; }
-.pick-balls { display:flex; gap:.25rem; flex-wrap:wrap; flex:1; min-width:0; }
+.pick-line {
+  display:flex; align-items:flex-start;
+  gap:.65rem; margin-bottom:.85rem; flex-wrap:wrap;
+}
+.pick-num {
+  font-size:.62rem; font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:.05em;
+  width:44px; flex-shrink:0;
+  padding-top:.5rem;
+}
+.pick-balls { display:flex; gap:.28rem; flex-wrap:wrap; flex:1; min-width:0; }
+
 .pick-ball {
   width:34px; height:34px; flex-shrink:0;
-  border-radius:50%; display:flex; align-items:center; justify-content:center;
-  font-family:'DM Mono',monospace; font-weight:500; font-size:.66rem;
-  background:radial-gradient(circle at 35% 35%,#f7d45a,var(--gold));
-  color:var(--void); border:2px solid rgba(245,200,66,.4);
-  box-shadow:0 0 8px rgba(245,200,66,.15);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.7rem; font-weight:700;
+  background:var(--navy);
+  color:white;
+  box-shadow:0 2px 6px rgba(26,46,59,.2);
 }
 .pick-bonus {
-  background:radial-gradient(circle at 35% 35%,#a0faf4,var(--cyan));
-  color:var(--void); border-color:rgba(79,209,197,.4);
-  box-shadow:0 0 8px rgba(79,209,197,.15);
+  background:var(--teal);
+  box-shadow:0 2px 6px rgba(10,158,143,.25);
 }
 .pick-life {
-  background:radial-gradient(circle at 35% 35%,#b3aaff,var(--sfl));
-  color:white; border-color:rgba(124,106,255,.5);
-  box-shadow:0 0 8px rgba(124,106,255,.2);
+  background:var(--sfl);
+  box-shadow:0 2px 6px rgba(107,70,193,.25);
 }
-.pick-strategy { font-family:'DM Mono',monospace; font-size:.56rem; color:var(--muted); width:100%; padding-left:50px; margin-top:.05rem; }
+.pick-strategy {
+  font-size:.62rem;
+  color:var(--text-muted);
+  width:100%; padding-left:50px;
+  margin-top:.05rem;
+}
 
-/* ── ERROR ── */
+/* ══════════════════════════════════════
+   DIVIDER
+══════════════════════════════════════ */
+.section-divider {
+  height:1px;
+  background:var(--border-light);
+  margin:1.25rem 0;
+}
+
+/* ══════════════════════════════════════
+   ERROR
+══════════════════════════════════════ */
 .error-msg {
-  background:rgba(255,107,107,.1); border:1px solid rgba(255,107,107,.3);
-  color:var(--hot); font-family:'DM Mono',monospace; font-size:.68rem;
-  padding:.65rem .9rem; border-radius:3px; margin-bottom:.8rem; display:none;
+  background:#fdf0ee;
+  border:1px solid #f5c5c0;
+  border-left:3px solid var(--hot);
+  color:var(--hot);
+  font-size:.75rem;
+  padding:.7rem 1rem;
+  border-radius:var(--radius-sm);
+  margin-bottom:.9rem;
+  display:none;
 }
 
 #results { display:none; }
 
-/* ── FOOTER ── */
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
 footer {
-  position:relative; z-index:10;
-  border-top:1px solid var(--border); padding:1.2rem 1rem;
-  margin-top:.5rem;
+  background:var(--navy);
+  margin-top:2rem;
+  padding:1.25rem;
 }
-.footer-inner { max-width:1100px; margin:0 auto; }
-.footer-copy { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--muted); line-height:1.7; margin-bottom:.5rem; }
-.footer-copy strong { color:var(--text); }
-.footer-copy .gold { color:var(--gold); }
-.footer-disclaimer { font-family:'DM Mono',monospace; font-size:.56rem; color:#4a4a6a; line-height:1.65; }
-
-/* ── DESKTOP tweaks ── */
-@media(min-width:768px) {
-  main { padding:1.5rem 2rem; }
-  header { padding:1.4rem 2rem 1.2rem; }
-  .logo { font-size:1.6rem; }
-  .stats-grid { grid-template-columns:repeat(5,1fr); gap:.8rem; }
-  .stat-value { font-size:1.8rem; }
-  .selector-row { grid-template-columns:repeat(6,1fr); }
-  .ball { width:34px; height:34px; font-size:.64rem; }
+.footer-inner {
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.footer-copy {
+  font-size:.65rem;
+  color:rgba(255,255,255,.5);
+  line-height:1.7;
+}
+.footer-copy strong { color:rgba(255,255,255,.8); }
+.footer-copy .teal { color:var(--teal); }
+.footer-disclaimer {
+  font-size:.62rem;
+  color:rgba(255,255,255,.35);
+  line-height:1.65;
+  max-width:420px;
+  text-align:right;
 }
 </style>
 </head>
 <body>
 
+<!-- ═══════════════════════ HEADER ═══════════════════════ -->
 <header>
-  <div class="header-inner">
-    <div>
-      <div class="logo">Lotto<span>Oracle</span></div>
-      <div class="tagline">AI Statistical Lottery Analysis</div>
-    </div>
-    <div class="header-right">
-      <div class="engsurv-brand">EngSurv <span>(Systems)</span> Ltd</div>
-      <div class="engsurv-sub">An EngSurv Group Product</div>
-      <span class="version-badge">v1.3 · 2025</span>
-    </div>
+  <div class="header-left">
+    <div class="logo-mark">LO</div>
+    <div class="logo-text">Lotto<span>Oracle</span></div>
   </div>
+  <div class="header-brand">EngSurv (Systems) Ltd</div>
 </header>
 
-<main>
+<!-- ═══════════════════════ BODY ═══════════════════════ -->
+<div class="app-body">
 
-  <div class="selector-label">Select Lottery</div>
+  <div class="page-title-block">
+    <div class="page-eyebrow">Statistical Analysis Tool</div>
+    <div class="page-title">Lottery Number Analysis</div>
+    <div class="page-subtitle">AI-weighted frequency analysis from real historical draw data</div>
+  </div>
+
+  <!-- Game selector -->
+  <div class="selector-label">Select Game</div>
   <div class="selector-row">
     <button class="lottery-btn active" onclick="setLottery('uk49s',this)">UK 49s</button>
     <button class="lottery-btn" onclick="setLottery('lotto',this)">UK Lotto</button>
@@ -319,22 +660,21 @@ footer {
   </div>
 
   <!-- Status banner -->
-  <div class="data-banner real" id="data-banner"></div>
+  <div class="banner teal" id="data-banner"></div>
 
-  <!-- Update Data row -->
+  <!-- Update data -->
   <div class="update-row" id="update-row">
     <button class="update-btn" onclick="openSourceAndPaste()">↗ Update Draw Data</button>
     <span class="paste-hint" id="paste-hint"></span>
   </div>
 
-  <!-- Collapsible paste zone -->
+  <!-- Paste zone -->
   <div class="paste-zone" id="paste-zone">
-    <div class="data-banner paste" id="paste-instructions" style="display:block">
-      Copy the draw results from the page that just opened, then paste them below.<br>
-      Each line = one draw. Numbers separated by spaces. Bonus/Life Ball last.
+    <div class="banner paste" id="paste-instructions" style="display:block">
+      Copy draw results from the page that just opened and paste below. One draw per line, numbers separated by spaces.
     </div>
-    <div class="input-section">
-      <div class="section-label" id="input-section-label">Paste Updated Draw Data</div>
+    <div class="card">
+      <div class="card-label" id="input-section-label">Paste Updated Draw Data</div>
       <p class="input-help" id="input-help"></p>
       <textarea id="draw-input" rows="8" placeholder="Paste draw data here…"></textarea>
       <div class="draw-count">Draws loaded: <span id="draw-count">0</span></div>
@@ -343,8 +683,9 @@ footer {
 
   <div class="error-msg" id="error-msg"></div>
 
+  <!-- Controls -->
   <div class="controls-row">
-    <button class="analyse-btn" id="analyse-btn" onclick="runAnalysis()">▶ Analyse</button>
+    <button class="analyse-btn" id="analyse-btn" onclick="runAnalysis()">▶ Analyse Numbers</button>
     <span class="count-label">Generate</span>
     <select class="count-selector" id="pick-count">
       <option value="3">3 lines</option>
@@ -354,39 +695,41 @@ footer {
     <span class="count-label">picks</span>
   </div>
 
-  <div class="thinking-bar" id="thinking-bar">⟳ Analysing draw patterns<span class="dots"></span></div>
+  <div class="thinking-bar" id="thinking-bar">⟳ Analysing draw history<span class="dots"></span></div>
 
+  <!-- ═══ RESULTS ═══ -->
   <div id="results">
 
+    <!-- Stat cards -->
     <div class="stats-grid" id="stats-grid"></div>
 
-    <!-- Standard heat map (scrollable single row) -->
-    <div class="freq-panel" id="standard-heatmap">
-      <div class="section-label">Number Heat Map</div>
+    <!-- Standard heat map -->
+    <div class="card" id="standard-heatmap">
+      <div class="card-label teal-label">Number Frequency Heat Map</div>
       <div class="heat-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:var(--hot)"></div>Hot</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--hot)"></div>Hot (top 20%)</div>
         <div class="legend-item"><div class="legend-dot" style="background:var(--warm)"></div>Warm</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#555"></div>Neutral</div>
-        <div class="legend-item"><div class="legend-dot" style="background:var(--cold)"></div>Cold</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#c8ced6"></div>Neutral</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--cold)"></div>Cold (bottom 20%)</div>
       </div>
       <div class="balls-row" id="balls-container"></div>
     </div>
 
-    <!-- SFL dual pool heat maps -->
+    <!-- SFL dual pool -->
     <div id="sfl-heatmap" style="display:none">
       <div class="sfl-pools">
-        <div class="freq-panel" style="margin-bottom:0">
-          <div class="section-label sfl-label">Main Numbers (1–47)</div>
+        <div class="card" style="margin-bottom:0">
+          <div class="card-label sfl-label">Main Numbers (1–47)</div>
           <div class="heat-legend">
             <div class="legend-item"><div class="legend-dot" style="background:var(--hot)"></div>Hot</div>
             <div class="legend-item"><div class="legend-dot" style="background:var(--warm)"></div>Warm</div>
-            <div class="legend-item"><div class="legend-dot" style="background:#555"></div>Neutral</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#c8ced6"></div>Neutral</div>
             <div class="legend-item"><div class="legend-dot" style="background:var(--cold)"></div>Cold</div>
           </div>
           <div class="balls-row" id="sfl-main-balls"></div>
         </div>
-        <div class="freq-panel" style="margin-bottom:0">
-          <div class="section-label sfl-label">Life Ball Pool (1–10)</div>
+        <div class="card" style="margin-bottom:0">
+          <div class="card-label sfl-label">Life Ball Pool (1–10)</div>
           <div class="heat-legend">
             <div class="legend-item"><div class="legend-dot" style="background:var(--sfl)"></div>Hot</div>
             <div class="legend-item"><div class="legend-dot" style="background:var(--cold)"></div>Cold</div>
@@ -398,15 +741,15 @@ footer {
 
     <!-- Hot / Cold tables -->
     <div class="table-grid">
-      <div class="tbl-panel">
-        <div class="section-label">🔥 Hottest Numbers</div>
+      <div class="card" style="margin-bottom:0">
+        <div class="card-label">🔥 Hottest Numbers</div>
         <table class="pattern-table" id="hot-table">
           <thead><tr><th>No.</th><th>Freq</th><th>Last seen</th><th>Rate</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
-      <div class="tbl-panel">
-        <div class="section-label">🧊 Coldest Numbers</div>
+      <div class="card" style="margin-bottom:0">
+        <div class="card-label">🧊 Coldest Numbers</div>
         <table class="pattern-table" id="cold-table">
           <thead><tr><th>No.</th><th>Freq</th><th>Last seen</th><th>Status</th></tr></thead>
           <tbody></tbody>
@@ -414,10 +757,10 @@ footer {
       </div>
     </div>
 
-    <!-- SFL Life Ball frequency -->
-    <div id="sfl-life-section" style="display:none; margin-bottom:.8rem">
-      <div class="tbl-panel">
-        <div class="section-label sfl-label">Life Ball Frequency</div>
+    <!-- SFL Life Ball table -->
+    <div id="sfl-life-section" style="display:none; margin-bottom:1rem">
+      <div class="card" style="margin-bottom:0">
+        <div class="card-label sfl-label">Life Ball Frequency</div>
         <table class="pattern-table" id="sfl-life-table">
           <thead><tr><th>Ball</th><th>Freq</th><th>Last seen</th><th>Rate</th></tr></thead>
           <tbody></tbody>
@@ -425,17 +768,17 @@ footer {
       </div>
     </div>
 
-    <!-- Sum + OE -->
+    <!-- Sum + OE tables -->
     <div class="table-grid">
-      <div class="tbl-panel">
-        <div class="section-label">Sum Range</div>
+      <div class="card" style="margin-bottom:0">
+        <div class="card-label">Sum Range Distribution</div>
         <table class="pattern-table" id="sum-table">
           <thead><tr><th>Range</th><th>Count</th><th>%</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
-      <div class="tbl-panel">
-        <div class="section-label">Odd / Even Split</div>
+      <div class="card" style="margin-bottom:0">
+        <div class="card-label">Odd / Even Patterns</div>
         <table class="pattern-table" id="oddeven-table">
           <thead><tr><th>Pattern</th><th>Count</th><th>%</th></tr></thead>
           <tbody></tbody>
@@ -443,39 +786,44 @@ footer {
       </div>
     </div>
 
-    <!-- AI Commentary -->
+    <!-- AI commentary -->
     <div class="ai-commentary" id="ai-commentary" style="display:none"></div>
 
     <!-- Picks -->
-    <div class="picks-section" id="picks-section">
-      <div class="picks-label" id="picks-label">⬡ AI-Generated Selections</div>
-      <p class="picks-disclaimer">Weighted statistical probability from real draw data. Lottery draws are random — no analysis predicts future results.</p>
+    <div class="card" id="picks-section">
+      <div class="picks-header">
+        <div class="picks-title" id="picks-title">AI-Generated Selections</div>
+      </div>
+      <div class="picks-disclaimer">
+        Generated using weighted statistical probability from real historical draw data. Lottery draws are entirely random — no analysis can predict future results.
+      </div>
       <div id="picks-container"></div>
     </div>
 
   </div><!-- #results -->
 
-</main>
+</div><!-- .app-body -->
 
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-copy">
-      <strong class="gold">LottoOracle</strong> — a product of <strong>EngSurv (Systems) Ltd</strong> · Part of the EngSurv Group<br>
-      © 2025 EngSurv (Systems) Ltd. All rights reserved. Unauthorised reproduction prohibited.
+      <strong class="teal">LottoOracle</strong> — a product of <strong>EngSurv (Systems) Ltd</strong><br>
+      Part of the EngSurv Group · Registered in England &amp; Wales<br>
+      © 2025 EngSurv (Systems) Ltd. All rights reserved.
     </div>
     <div class="footer-disclaimer">
-      Statistical analysis tool only. Lottery draws are random events. No algorithm can predict future outcomes. For entertainment purposes only. Play responsibly. GamCare: 0808 8020 133 · begambleaware.org
+      Statistical analysis tool only. Lottery draws are random events. No algorithm can predict future outcomes. For entertainment purposes only. Play responsibly.<br>
+      GamCare: 0808 8020 133 · begambleaware.org
     </div>
   </div>
 </footer>
 
 <script>
-// ══════════════════════════════════════════
-//  REAL DRAW DATA  (static, current to Jun 2026)
-//  Sources: lottery.co.uk · beatlottery.co.uk · lottostrategies.com
-// ══════════════════════════════════════════
+// ══════════════════════════════════════════════════
+//  REAL DRAW DATA
+// ══════════════════════════════════════════════════
 const REAL_DRAWS = {
-
 uk49s:`6 7 16 31 38 43 10
 3 15 26 28 32 38 45
 7 16 24 38 43 49 10
@@ -575,7 +923,64 @@ uk49s:`6 7 16 31 38 43 10
 5 14 23 32 39 46 18
 2 11 20 29 38 45 15`,
 
-lotto:`6 20 34 38 47 48 4
+lotto:`15 37 39 42 46 53 33
+18 26 48 49 51 53 33
+22 27 38 42 47 59 31
+7 8 16 33 37 42 29
+14 20 30 37 40 52 45
+11 25 27 31 32 57 30
+2 32 35 44 48 56 26
+2 6 28 30 42 49 24
+3 4 10 20 49 51 36
+1 15 21 24 32 51 9
+2 6 28 33 43 54 55
+11 13 14 21 47 54 52
+11 28 41 48 57 59 3
+1 6 24 32 48 54 9
+17 27 28 42 47 59 7
+3 14 22 24 34 54 52
+14 18 26 45 50 53 43
+24 26 27 39 47 50 8
+16 19 32 33 34 44 29
+5 10 22 38 56 58 54
+2 6 29 36 55 59 50
+3 9 12 23 32 53 46
+22 32 34 47 52 55 10
+4 13 14 17 23 31 56
+9 13 22 36 40 45 41
+30 35 39 45 46 53 37
+7 20 33 48 57 59 47
+13 33 35 40 43 54 56
+22 34 41 43 54 56 24
+7 8 12 23 28 43 10
+15 28 30 33 39 58 44
+26 31 36 41 45 51 16
+12 15 31 32 48 58 44
+1 12 25 29 40 41 16
+8 10 26 30 35 42 50
+7 10 20 55 57 59 44
+4 17 18 20 23 56 33
+33 36 38 46 47 50 35
+4 5 6 7 11 33 35
+9 20 24 51 52 59 31
+4 21 23 27 36 57 20
+9 12 15 16 37 39 14
+3 11 13 14 43 49 5
+7 31 33 37 39 56 20
+3 4 6 12 29 40 19
+4 14 22 32 38 52 27
+3 10 14 19 32 53 23
+6 12 18 29 49 56 7
+1 4 12 15 39 47 48
+22 45 49 53 54 56 25
+7 10 14 15 17 35 31
+27 29 34 36 43 59 37
+15 16 23 32 42 46 52
+7 16 23 27 35 40 48
+9 24 35 40 47 52 18
+19 22 31 32 34 40 43
+5 10 18 28 34 53 46
+14 16 18 22 47 56 54
 10 30 36 44 45 58 59
 2 3 18 25 40 54 14
 9 37 39 40 47 51 19
@@ -596,6 +1001,7 @@ lotto:`6 20 34 38 47 48 4
 2 5 22 35 44 54 23
 5 6 13 18 22 53 9
 3 9 20 33 45 50 12
+6 20 34 38 47 48 4
 3 20 27 29 38 46 14
 20 36 40 43 51 55 21
 12 15 16 35 38 48 49
@@ -999,75 +1405,38 @@ setforlife:`11 20 23 24 27 5
 4 13 22 31 40 9`
 };
 
-// ══════════════════════════════════════════
-//  DATA SOURCES  — for Update button
-// ══════════════════════════════════════════
+// ══════════════════════════════════════════════════
 const DATA_SOURCES = {
-  uk49s: {
-    label:'UK 49s Lunchtime', draws:96,
-    url:'https://www.lottostrategies.com/cgi-bin/winning_of_past_month/100/UKL/UK/United-Kingdom-UK-Lunchtime-49s-lottery-results.html',
-    hint:'Format: 6 numbers + bonus, one draw per line. Copy the numbers column only.',
-    updated:'2025–2026'
-  },
-  lotto: {
-    label:'UK Lotto', draws:110,
-    url:'https://www.lottery.co.uk/lotto/results/archive-2026',
-    hint:'Format: 6 main numbers + bonus ball per line.',
-    updated:'Jan 2025–Mar 2026'
-  },
-  euromillions: {
-    label:'EuroMillions', draws:96,
-    url:'https://www.beatlottery.co.uk/euromillions/draw-history',
-    hint:'Format: 5 main numbers + 2 Lucky Stars per line.',
-    updated:'2025'
-  },
-  thunderball: {
-    label:'Thunderball', draws:96,
-    url:'https://www.beatlottery.co.uk/thunderball/draw-history',
-    hint:'Format: 5 main numbers (1–39) + Thunderball (1–14) per line.',
-    updated:'2025'
-  },
-  setforlife: {
-    label:'Set for Life', draws:96,
-    url:'https://www.beatlottery.co.uk/set-for-life/draw-history',
-    hint:'Format: 5 main numbers (1–47) + Life Ball (1–10) per line.',
-    updated:'2025–2026'
-  },
-  custom: {
-    label:'Custom', draws:0,
-    url:null,
-    hint:'Paste your own draw history, one draw per line.',
-    updated:''
-  }
+  uk49s:        { label:'UK 49s', draws:96, url:'https://www.lottostrategies.com/cgi-bin/winning_of_past_month/100/UKL/UK/United-Kingdom-UK-Lunchtime-49s-lottery-results.html', updated:'2025–2026' },
+  lotto:        { label:'UK Lotto', draws:183, url:'https://www.beatlottery.co.uk/lotto/draw-history', updated:'Jan 2025–Oct 2026' },
+  euromillions: { label:'EuroMillions', draws:96, url:'https://www.beatlottery.co.uk/euromillions/draw-history', updated:'2025' },
+  thunderball:  { label:'Thunderball', draws:96, url:'https://www.beatlottery.co.uk/thunderball/draw-history', updated:'2025' },
+  setforlife:   { label:'Set for Life', draws:96, url:'https://www.beatlottery.co.uk/set-for-life/draw-history', updated:'2025–2026' },
+  custom:       { label:'Custom', draws:0, url:null, updated:'' }
 };
 
-// ══════════════════════════════════════════
-//  LOTTERY CONFIG
-// ══════════════════════════════════════════
 const CFG = {
-  uk49s:       {max:49,balls:6,bonus:1, label:'UK 49s (Lunchtime)'},
-  lotto:       {max:59,balls:6,bonus:1, label:'UK Lotto'},
-  euromillions:{max:50,balls:5,bonus:2, label:'EuroMillions'},
-  thunderball: {max:39,balls:5,bonus:1, label:'Thunderball'},
-  setforlife:  {max:47,balls:5,bonus:1, label:'Set for Life', isSFL:true, lifeMax:10},
-  custom:      {max:59,balls:6,bonus:1, label:'Custom'}
+  uk49s:        { max:49, balls:6, bonus:1, label:'UK 49s (Lunchtime)' },
+  lotto:        { max:59, balls:6, bonus:1, label:'UK Lotto' },
+  euromillions: { max:50, balls:5, bonus:2, label:'EuroMillions' },
+  thunderball:  { max:39, balls:5, bonus:1, label:'Thunderball' },
+  setforlife:   { max:47, balls:5, bonus:1, label:'Set for Life', isSFL:true, lifeMax:10 },
+  custom:       { max:59, balls:6, bonus:1, label:'Custom' }
 };
 
 const INPUT_HELP = {
-  uk49s:       'One draw per line · 6 main numbers + bonus ball · Example: <code>6 7 16 31 38 43 10</code>',
-  lotto:       'One draw per line · 6 main numbers + bonus ball · Example: <code>10 30 36 44 45 58 59</code>',
-  euromillions:'One draw per line · 5 main + 2 Lucky Stars · Example: <code>7 8 24 35 49 2 12</code>',
-  thunderball: 'One draw per line · 5 main (1–39) + Thunderball (1–14) · Example: <code>15 18 20 23 27 8</code>',
-  setforlife:  'One draw per line · 5 main (1–47) + Life Ball (1–10) · Example: <code>11 20 23 24 27 5</code>',
-  custom:      'Paste any lottery draws · one per line · numbers space or comma separated'
+  uk49s:       'Paste directly from any results site — day labels, dates and hyphens are stripped automatically. e.g. <code>TUE 10/06/26 06-11-24-31-44-45-25</code> or plain <code>6 11 24 31 44 45 25</code>',
+  lotto:       'Paste directly from any results site — day labels, dates and hyphens are stripped automatically. e.g. <code>SAT 10/04/26 04-11-29-37-45-57-22</code> or plain <code>4 11 29 37 45 57 22</code>',
+  euromillions:'Paste directly from any results site. 5 main numbers + 2 Lucky Stars per draw. Dates and labels stripped automatically.',
+  thunderball: 'Paste directly from any results site. 5 main numbers (1–39) + Thunderball (1–14). Dates and labels stripped automatically.',
+  setforlife:  'Paste directly from any results site. 5 main numbers (1–47) + Life Ball (1–10). Dates and labels stripped automatically.',
+  custom:      'Paste any lottery draws — one per line. Dates, day labels and hyphens are all handled automatically.'
 };
 
 let currentLottery = 'uk49s';
 let pasteOpen = false;
 
-// ══════════════════════════════════════════
-//  SET LOTTERY
-// ══════════════════════════════════════════
+// ── SET LOTTERY ──
 function setLottery(type, btn) {
   currentLottery = type;
   document.querySelectorAll('.lottery-btn').forEach(b => b.classList.remove('active','sfl-active'));
@@ -1077,10 +1446,10 @@ function setLottery(type, btn) {
   const ab = document.getElementById('analyse-btn');
   isSFL ? ab.classList.add('sfl-mode') : ab.classList.remove('sfl-mode');
 
-  document.getElementById('input-section-label').className = isSFL ? 'section-label sfl-label' : 'section-label';
+  const il = document.getElementById('input-section-label');
+  il.className = isSFL ? 'card-label sfl-label' : 'card-label';
   document.getElementById('input-help').innerHTML = INPUT_HELP[type];
 
-  // Load data into textarea
   if (type !== 'custom') {
     document.getElementById('draw-input').value = REAL_DRAWS[type] || '';
   } else {
@@ -1088,137 +1457,169 @@ function setLottery(type, btn) {
   }
   updateDrawCount();
 
-  // Banner
   const src = DATA_SOURCES[type];
   const banner = document.getElementById('data-banner');
   if (type === 'custom') {
-    banner.className = 'data-banner warn';
+    banner.className = 'banner amber';
     banner.innerHTML = '✎ Custom mode — paste your own draw data below.';
   } else {
-    banner.className = 'data-banner real';
+    banner.className = 'banner teal';
     banner.innerHTML = `✔ Real draw data loaded · ${src.draws} draws · ${src.updated} · Source: ${src.url ? src.url.replace('https://','').split('/')[0] : '—'}`;
   }
   banner.style.display = 'block';
 
-  // Update button hint
   document.getElementById('paste-hint').textContent = src.url
-    ? `Opens ${src.label} results · paste the new draws into the box below`
-    : '';
+    ? `Opens ${src.label} results page — paste the latest draws below` : '';
   document.getElementById('update-row').style.display = type === 'custom' ? 'none' : 'flex';
 
-  // Close paste zone & hide results
   closePasteZone();
   document.getElementById('results').style.display = 'none';
 }
 
-// ══════════════════════════════════════════
-//  UPDATE DATA BUTTON
-// ══════════════════════════════════════════
 function openSourceAndPaste() {
   const src = DATA_SOURCES[currentLottery];
   if (src.url) window.open(src.url, '_blank');
-
-  // Open paste zone
   pasteOpen = true;
   document.getElementById('paste-zone').classList.add('open');
   document.getElementById('draw-input').value = '';
-  document.getElementById('draw-input').placeholder = `Paste the latest ${src.label} draws here — one draw per line…`;
+  document.getElementById('draw-input').placeholder = `Paste the latest ${src.label} draws here…`;
   updateDrawCount();
-
-  // Scroll to textarea
-  setTimeout(() => document.getElementById('draw-input').scrollIntoView({behavior:'smooth', block:'center'}), 300);
+  setTimeout(() => document.getElementById('draw-input').scrollIntoView({behavior:'smooth',block:'center'}), 300);
 }
-
 function closePasteZone() {
   pasteOpen = false;
   document.getElementById('paste-zone').classList.remove('open');
 }
 
-// When user pastes / types in the box, load what they've pasted
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('draw-input').addEventListener('input', () => {
-    updateDrawCount();
-    // If they've pasted data, show a confirmation banner
-    const raw = document.getElementById('draw-input').value.trim();
-    if (raw && pasteOpen) {
-      const count = raw.split('\n').filter(l => l.trim()).length;
-      const banner = document.getElementById('data-banner');
-      banner.className = 'data-banner real';
-      banner.innerHTML = `✔ ${count} draws pasted and ready to analyse`;
-      banner.style.display = 'block';
-    }
-  });
-
-  // Auto-load UK 49s on startup
-  setLottery('uk49s', document.querySelector('.lottery-btn.active'));
-});
-
 function updateDrawCount() {
   const raw = document.getElementById('draw-input').value.trim();
-  const count = raw ? raw.split('\n').filter(l => l.trim()).length : 0;
+  if (!raw) { document.getElementById('draw-count').textContent = 0; return; }
+  const cfg = CFG[currentLottery];
+  const maxBall = cfg.max;
+  // Count lines that will yield valid draws (same logic as parseDraws)
+  const count = raw.split('\n').filter(line => {
+    const cleaned = line.trim()
+      .replace(/\b\d{1,2}\/\d{1,2}\/\d{2,4}\b/g, ' ')
+      .replace(/\b\d{4}-\d{2}-\d{2}\b/g, ' ')
+      .replace(/\b\d{2}-\d{2}-\d{4}\b/g, ' ')
+      .replace(/\b(mon|tue|wed|thu|fri|sat|sun)\b/gi, ' ')
+      .replace(/\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/gi, ' ')
+      .replace(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b/gi, ' ')
+      .replace(/\b(draw|no\.?|draw no\.?)\s*\d+\b/gi, ' ');
+    const nums = cleaned.split(/[^0-9]+/).map(s => parseInt(s,10)).filter(n => !isNaN(n) && n >= 1 && n <= maxBall);
+    return nums.length >= 5;
+  }).length;
   document.getElementById('draw-count').textContent = count;
 }
 
-// ══════════════════════════════════════════
-//  PARSE
-// ══════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('draw-input').addEventListener('input', () => {
+    updateDrawCount();
+    if (pasteOpen) {
+      updateDrawCount();
+      const c = parseInt(document.getElementById('draw-count').textContent) || 0;
+      const b = document.getElementById('data-banner');
+      b.className = 'banner teal';
+      b.innerHTML = `✔ ${c} draws pasted and ready to analyse`;
+      b.style.display = 'block';
+    }
+  });
+  setLottery('uk49s', document.querySelector('.lottery-btn.active'));
+});
+
+// ── PARSE ──
 function parseDraws() {
   const raw = document.getElementById('draw-input').value.trim();
   if (!raw) return null;
-  const draws = raw.split('\n').filter(l => l.trim()).map(line =>
-    line.trim().split(/[\s,]+/).map(Number).filter(n => !isNaN(n) && n > 0)
-  ).filter(d => d.length >= 5);
+
+  const cfg = CFG[currentLottery];
+  const maxBall = cfg.max;
+  const minBalls = cfg.balls + (cfg.bonus || 0); // minimum numbers expected per draw
+
+  const draws = [];
+
+  for (const line of raw.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+
+    // Strip leading day/date tokens before extracting numbers.
+    // Handles formats like:
+    //   TUE 10/06/26   06-11-24-31-44-45-25
+    //   10/06/2026  6 11 24 31 44 45 25
+    //   2026-10-06: 6, 11, 24, 31, 44, 45, 25
+    //   6 11 24 31 44 45 25   (plain, already correct)
+
+    // Remove date-like tokens: MM/DD/YY, DD/MM/YYYY, YYYY-MM-DD, etc.
+    let cleaned = trimmed
+      .replace(/\b\d{1,2}\/\d{1,2}\/\d{2,4}\b/g, ' ')   // 10/06/26 or 06/10/2026
+      .replace(/\b\d{4}-\d{2}-\d{2}\b/g, ' ')             // 2026-10-06
+      .replace(/\b\d{2}-\d{2}-\d{4}\b/g, ' ')             // 06-10-2026
+      // Remove day-of-week abbreviations (Mon, Tue, Wed etc.)
+      .replace(/\b(mon|tue|wed|thu|fri|sat|sun)\b/gi, ' ')
+      // Remove full day names
+      .replace(/\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/gi, ' ')
+      // Remove month names
+      .replace(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b/gi, ' ')
+      // Remove draw number prefixes like "Draw 1234:" or "No. 1234"
+      .replace(/\b(draw|no\.?|draw no\.?)\s*\d+\b/gi, ' ');
+
+    // Now extract all number groups — handles both space-separated and hyphen-separated
+    // Split remaining string on any non-numeric character sequences
+    const nums = cleaned
+      .split(/[^0-9]+/)
+      .map(s => parseInt(s, 10))
+      .filter(n => !isNaN(n) && n >= 1 && n <= maxBall);
+
+    // Must have at least the expected number of main balls
+    if (nums.length >= 5) {
+      draws.push(nums);
+    }
+  }
+
   return draws.length >= 5 ? draws : null;
 }
 
-// ══════════════════════════════════════════
-//  ANALYSIS
-// ══════════════════════════════════════════
+// ── ANALYSIS ──
 function analyse(draws) {
   const cfg = CFG[currentLottery];
-  const {max:maxBall, balls:mainCount, isSFL, lifeMax=0} = cfg;
-
-  const freq = {}, lastSeen = {};
-  for (let i=1;i<=maxBall;i++){freq[i]=0;lastSeen[i]=null;}
-
+  const {max:maxBall,balls:mainCount,isSFL,lifeMax=0} = cfg;
+  const freq={}, lastSeen={};
+  for(let i=1;i<=maxBall;i++){freq[i]=0;lastSeen[i]=null;}
   const lifeFreq={}, lifeLastSeen={};
-  if (isSFL) for (let i=1;i<=lifeMax;i++){lifeFreq[i]=0;lifeLastSeen[i]=null;}
+  if(isSFL) for(let i=1;i<=lifeMax;i++){lifeFreq[i]=0;lifeLastSeen[i]=null;}
 
-  draws.forEach((draw,idx) => {
-    draw.slice(0,mainCount).forEach(n => {
-      if (n>=1&&n<=maxBall){freq[n]++;if(lastSeen[n]===null)lastSeen[n]=idx;}
+  draws.forEach((draw,idx)=>{
+    draw.slice(0,mainCount).forEach(n=>{
+      if(n>=1&&n<=maxBall){freq[n]++;if(lastSeen[n]===null)lastSeen[n]=idx;}
     });
-    if (isSFL && draw.length>mainCount){
+    if(isSFL&&draw.length>mainCount){
       const lb=draw[mainCount];
       if(lb>=1&&lb<=lifeMax){lifeFreq[lb]++;if(lifeLastSeen[lb]===null)lifeLastSeen[lb]=idx;}
     }
   });
 
-  const sorted = Object.entries(freq).sort((a,b)=>b[1]-a[1]);
-  const fv = sorted.map(e=>e[1]);
-  const t20=fv[Math.floor(fv.length*.2)], t40=fv[Math.floor(fv.length*.4)], b20=fv[Math.floor(fv.length*.8)];
-  const heat = f => f>=t20?'hot':f>=t40?'warm':f<=b20?'cold':'neutral';
+  const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]);
+  const fv=sorted.map(e=>e[1]);
+  const t20=fv[Math.floor(fv.length*.2)],t40=fv[Math.floor(fv.length*.4)],b20=fv[Math.floor(fv.length*.8)];
+  const heat=f=>f>=t20?'hot':f>=t40?'warm':f<=b20?'cold':'neutral';
 
-  const lifeSorted = isSFL ? Object.entries(lifeFreq).sort((a,b)=>b[1]-a[1]) : [];
-  const lv = lifeSorted.map(e=>e[1]);
-  const lt=lv[Math.floor(lv.length*.3)]||0, lb2=lv[Math.floor(lv.length*.7)]||0;
-  const lifeHeat = f => f>=lt?'life':f<=lb2?'cold':'neutral';
+  const lifeSorted=isSFL?Object.entries(lifeFreq).sort((a,b)=>b[1]-a[1]):[];
+  const lv=lifeSorted.map(e=>e[1]);
+  const lt=lv[Math.floor(lv.length*.3)]||0,lb2=lv[Math.floor(lv.length*.7)]||0;
+  const lifeHeat=f=>f>=lt?'life':f<=lb2?'cold':'neutral';
 
-  const sums = draws.map(d=>d.slice(0,mainCount).reduce((a,b)=>a+b,0));
-  const minS=Math.min(...sums), maxS=Math.max(...sums);
-  const bk=Math.ceil((maxS-minS)/5)||10;
+  const sums=draws.map(d=>d.slice(0,mainCount).reduce((a,b)=>a+b,0));
+  const minS=Math.min(...sums),maxS=Math.max(...sums),bk=Math.ceil((maxS-minS)/5)||10;
   const sumBuckets={};
-  sums.forEach(s=>{const b=Math.floor((s-minS)/bk);const lbl=`${minS+b*bk}–${minS+(b+1)*bk-1}`;sumBuckets[lbl]=(sumBuckets[lbl]||0)+1;});
+  sums.forEach(s=>{const b=Math.floor((s-minS)/bk);const l=`${minS+b*bk}–${minS+(b+1)*bk-1}`;sumBuckets[l]=(sumBuckets[l]||0)+1;});
 
   const oe={};
-  draws.forEach(d=>{const m=d.slice(0,mainCount);const o=m.filter(n=>n%2!==0).length;const k=`${o}O/${mainCount-o}E`;oe[k]=(oe[k]||0)+1;});
+  draws.forEach(d=>{const m=d.slice(0,mainCount);const o=m.filter(n=>n%2!==0).length;const k=`${o}O / ${mainCount-o}E`;oe[k]=(oe[k]||0)+1;});
 
   return {freq,sorted,heat,lastSeen,lifeFreq,lifeSorted,lifeLastSeen,lifeHeat,sumBuckets,oe,draws,mainCount,maxBall,sums,isSFL,lifeMax};
 }
 
-// ══════════════════════════════════════════
-//  PICKS
-// ══════════════════════════════════════════
+// ── PICKS ──
 const STRATS=[
   {n:'Hot weighted',b:.75},{n:'Balanced blend',b:.5},{n:'Due numbers',b:.2},
   {n:'Mixed strategy',b:.45},{n:'Cold streak break',b:.1},{n:'High frequency',b:.8},
@@ -1249,8 +1650,7 @@ function genPicks(stats,count){
     let bonus=[];
     if(isSFL){
       const lv2=Object.values(lifeFreq),lmx=Math.max(...lv2,1),lmn=Math.min(...lv2,0);
-      const lp=Array.from({length:lifeMax},(_,i)=>{const f=lifeFreq[i+1]||0,nm=lmx>lmn?(f-lmn)/(lmx-lmn):.5;return{n:i+1,w:Math.max(.01,.2+nm*.8)};});
-      bonus=wSample(lp,1);
+      bonus=wSample(Array.from({length:lifeMax},(_,i)=>{const f=lifeFreq[i+1]||0,nm=lmx>lmn?(f-lmn)/(lmx-lmn):.5;return{n:i+1,w:Math.max(.01,.2+nm*.8)};}),1);
     } else if(CFG[currentLottery].bonus>0){
       bonus=wSample(pool.filter(p=>!balls.includes(p.n)),CFG[currentLottery].bonus);
     }
@@ -1258,30 +1658,25 @@ function genPicks(stats,count){
   });
 }
 
-// ══════════════════════════════════════════
-//  AI COMMENTARY
-// ══════════════════════════════════════════
+// ── AI COMMENTARY ──
 async function getAI(stats,drawCount){
   const hot=stats.sorted.slice(0,5).map(e=>e[0]).join(', ');
   const cold=stats.sorted.slice(-5).map(e=>e[0]).join(', ');
   const avg=Math.round(stats.sums.reduce((a,b)=>a+b,0)/stats.sums.length);
   let sflNote='';
   if(stats.isSFL&&stats.lifeSorted[0]) sflNote=`\n- Hottest Life Ball: ${stats.lifeSorted[0][0]}\n- Coldest: ${stats.lifeSorted[stats.lifeSorted.length-1][0]}`;
-  const prompt=`Lottery statistics analyst. 3 bullet insights from this data (•, 2 sentences max each, plain English):\n- Game: ${CFG[currentLottery].label}\n- Draws: ${drawCount}\n- Hot 5: ${hot}\n- Cold 5: ${cold}\n- Avg sum: ${avg}${sflNote}\nNote draws are statistically independent.`;
   try{
-    const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:400,messages:[{role:"user",content:prompt}]})});
+    const r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:400,messages:[{role:"user",content:`Lottery statistics analyst. 3 bullet insights (• prefix, 2 sentences max each, plain English):\n- Game: ${CFG[currentLottery].label}\n- Draws: ${drawCount}\n- Hot 5: ${hot}\n- Cold 5: ${cold}\n- Avg sum: ${avg}${sflNote}\nNote draws are statistically independent random events.`}]})});
     const d=await r.json();return d.content?.[0]?.text||null;
   }catch(e){return null;}
 }
 
-// ══════════════════════════════════════════
-//  RUN ANALYSIS
-// ══════════════════════════════════════════
+// ── RUN ──
 async function runAnalysis(){
   const draws=parseDraws();
   const err=document.getElementById('error-msg');
   err.style.display='none';
-  if(!draws){err.textContent='Need at least 5 valid draw lines. Select a game or paste data above.';err.style.display='block';return;}
+  if(!draws){err.textContent='Please enter at least 5 valid draw lines to analyse.';err.style.display='block';return;}
 
   document.getElementById('analyse-btn').disabled=true;
   document.getElementById('results').style.display='none';
@@ -1294,24 +1689,19 @@ async function runAnalysis(){
   document.getElementById('thinking-bar').style.display='none';
   document.getElementById('results').style.display='block';
   document.getElementById('analyse-btn').disabled=false;
-
-  // Close paste zone now we have results
   closePasteZone();
 
-  // AI commentary async
   const commEl=document.getElementById('ai-commentary');
-  commEl.innerHTML='<p style="color:var(--muted);font-size:.7rem">⟳ Generating AI insights…</p>';
+  commEl.innerHTML='<p style="color:var(--teal-dark)">⟳ Generating AI insights…</p>';
   commEl.style.display='block';
   try{
     const c=await getAI(stats,draws.length);
-    if(c){commEl.innerHTML=c.split('\n').filter(l=>l.trim()).map(l=>`<p>${l}</p>`).join('');}
+    if(c) commEl.innerHTML=c.split('\n').filter(l=>l.trim()).map(l=>`<p>${l}</p>`).join('');
     else commEl.style.display='none';
   }catch(e){commEl.style.display='none';}
 }
 
-// ══════════════════════════════════════════
-//  RENDER
-// ══════════════════════════════════════════
+// ── RENDER ──
 function renderResults(stats,picks,drawCount){
   const {freq,sorted,heat,lastSeen,lifeFreq,lifeSorted,lifeLastSeen,lifeHeat,sumBuckets,oe,maxBall,isSFL,lifeMax}=stats;
   const avgFreq=(Object.values(freq).reduce((a,b)=>a+b,0)/maxBall).toFixed(1);
@@ -1321,14 +1711,13 @@ function renderResults(stats,picks,drawCount){
   if(isSFL&&lifeSorted[0]) extra=`<div class="stat-card"><div class="stat-value" style="color:var(--sfl)">${lifeSorted[0][0]}</div><div class="stat-desc">Hot Life Ball (${lifeSorted[0][1]}×)</div></div>`;
 
   document.getElementById('stats-grid').innerHTML=`
-    <div class="stat-card"><div class="stat-value" style="color:var(--gold)">${drawCount}</div><div class="stat-desc">Draws Analysed</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--teal)">${drawCount}</div><div class="stat-desc">Draws Analysed</div></div>
     <div class="stat-card"><div class="stat-value" style="color:var(--hot)">${hotN}</div><div class="stat-desc">Hottest (${freq[hotN]}×)</div></div>
     <div class="stat-card"><div class="stat-value" style="color:var(--cold)">${coldN}</div><div class="stat-desc">Coldest (${freq[coldN]}×)</div></div>
-    <div class="stat-card"><div class="stat-value" style="color:var(--cyan)">${avgSum}</div><div class="stat-desc">Avg Sum</div></div>
-    <div class="stat-card"><div class="stat-value" style="color:var(--magenta)">${avgFreq}</div><div class="stat-desc">Avg Freq</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--navy)">${avgSum}</div><div class="stat-desc">Avg Sum</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--text-mid)">${avgFreq}</div><div class="stat-desc">Avg Freq</div></div>
     ${extra}`;
 
-  // Heat maps — single scrollable rows
   if(isSFL){
     document.getElementById('standard-heatmap').style.display='none';
     document.getElementById('sfl-heatmap').style.display='block';
@@ -1336,7 +1725,7 @@ function renderResults(stats,picks,drawCount){
     for(let n=1;n<=maxBall;n++){const b=document.createElement('div');b.className=`ball ball-${heat(freq[n])}`;b.textContent=n;b.title=`${n}: ${freq[n]}×`;me.appendChild(b);}
     const le=document.getElementById('sfl-life-balls');le.innerHTML='';
     for(let n=1;n<=lifeMax;n++){const b=document.createElement('div');b.className=`ball ball-${lifeHeat(lifeFreq[n]||0)}`;b.textContent=n;b.title=`LB ${n}: ${lifeFreq[n]||0}×`;le.appendChild(b);}
-  }else{
+  } else {
     document.getElementById('standard-heatmap').style.display='block';
     document.getElementById('sfl-heatmap').style.display='none';
     const bc=document.getElementById('balls-container');bc.innerHTML='';
@@ -1348,13 +1737,13 @@ function renderResults(stats,picks,drawCount){
   sorted.slice(0,10).forEach(([n,f])=>{
     const ls=lastSeen[n]!==null?`${lastSeen[n]+1} ago`:'—';
     const pct=((f/drawCount)*100).toFixed(1);
-    hb.innerHTML+=`<tr><td style="color:var(--hot);font-weight:500">${n}</td><td>${f}</td><td style="color:var(--muted)">${ls}</td><td class="${+pct>25?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
+    hb.innerHTML+=`<tr><td class="num-hot">${n}</td><td>${f}</td><td style="color:var(--text-muted)">${ls}</td><td class="${+pct>25?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
   });
 
   const cb=document.querySelector('#cold-table tbody');cb.innerHTML='';
   [...sorted].reverse().slice(0,10).forEach(([n,f])=>{
     const ls=lastSeen[n]!==null?`${lastSeen[n]+1} ago`:'Never';
-    cb.innerHTML+=`<tr><td style="color:var(--cold);font-weight:500">${n}</td><td>${f}</td><td style="color:var(--muted)">${ls}</td><td style="color:var(--cold)">Due</td></tr>`;
+    cb.innerHTML+=`<tr><td class="num-cold">${n}</td><td>${f}</td><td style="color:var(--text-muted)">${ls}</td><td style="color:var(--cold)">Due</td></tr>`;
   });
 
   const lifeSec=document.getElementById('sfl-life-section');
@@ -1364,9 +1753,9 @@ function renderResults(stats,picks,drawCount){
     lifeSorted.forEach(([n,f])=>{
       const ls=lifeLastSeen[n]!==null?`${lifeLastSeen[n]+1} ago`:'—';
       const pct=((f/drawCount)*100).toFixed(1);
-      lb.innerHTML+=`<tr><td style="color:var(--sfl);font-weight:500">${n}</td><td>${f}</td><td style="color:var(--muted)">${ls}</td><td class="${+pct>25?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
+      lb.innerHTML+=`<tr><td class="num-sfl">${n}</td><td>${f}</td><td style="color:var(--text-muted)">${ls}</td><td class="${+pct>25?'val-high':+pct>15?'val-med':'val-low'}">${pct}%</td></tr>`;
     });
-  }else lifeSec.style.display='none';
+  } else lifeSec.style.display='none';
 
   const sb=document.querySelector('#sum-table tbody');sb.innerHTML='';
   Object.entries(sumBuckets).sort().forEach(([r,c])=>{
@@ -1381,9 +1770,9 @@ function renderResults(stats,picks,drawCount){
   });
 
   // Picks
-  const ps=document.getElementById('picks-section'),pl=document.getElementById('picks-label');
-  if(isSFL){ps.classList.add('sfl-picks');pl.className='picks-label sfl-label';pl.textContent='⬡ Set for Life Selections';}
-  else{ps.classList.remove('sfl-picks');pl.className='picks-label';pl.textContent='⬡ AI-Generated Selections';}
+  const pt=document.getElementById('picks-title');
+  pt.className=isSFL?'picks-title sfl':'picks-title';
+  pt.textContent=isSFL?'Set for Life — AI Selections':'AI-Generated Selections';
 
   const pe=document.getElementById('picks-container');pe.innerHTML='';
   picks.forEach((pick,i)=>{
